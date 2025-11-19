@@ -1,0 +1,37 @@
+Dependencies for Project 'lab4', Target 'Test_lab4': (DO NOT MODIFY !)
+CompilerVersion: 6240000::V6.24::ARMCLANG
+F (..\src\ejercicios.c)(0x68F53716)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-mlittle-endian -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../src -I ../hal/include -I ../shared/includes-I./RTE/_Test_lab4-ID:/programs/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-ID:/programs/Arm/Packs/ARM/Cortex_DFP/1.1.0/Device/ARMCM4/Include-D__UVISION_VERSION="543" -DARMCM4 -D_RTE_-o ./objects/ejercicios.o -MMD)
+I (..\src\ejercicios.h)(0x68F536B5)
+I (..\src\circ_buf.h)(0x68F51943)
+I (..\shared\includes\dds.h)(0x68E62D2E)
+F (..\src\main.c)(0x68F53D0E)()
+F (..\src\isr.c)(0x68F53E55)()
+F (..\src\circ_buf.c)(0x68F51948)()
+F (..\test\test_lab4.c)(0x68F5E46F)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-mlittle-endian -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../src -I ../hal/include -I ../shared/includes-I./RTE/_Test_lab4-ID:/programs/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-ID:/programs/Arm/Packs/ARM/Cortex_DFP/1.1.0/Device/ARMCM4/Include-D__UVISION_VERSION="543" -DARMCM4 -D_RTE_-o ./objects/test_lab4.o -MMD)
+I (..\shared\includes\pulsaciones.h)(0x68E7FC8F)
+I (..\src\ejercicios.h)(0x68F536B5)
+I (..\src\circ_buf.h)(0x68F51943)
+F (..\test\test_circ_buf.c)(0x68F51C30)()
+F (..\shared\src\pulsaciones.c)(0x68E7FC97)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-mlittle-endian -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../src -I ../hal/include -I ../shared/includes-I./RTE/_Test_lab4-ID:/programs/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-ID:/programs/Arm/Packs/ARM/Cortex_DFP/1.1.0/Device/ARMCM4/Include-D__UVISION_VERSION="543" -DARMCM4 -D_RTE_-o ./objects/pulsaciones.o -MMD)
+I (..\shared\includes\pulsaciones.h)(0x68E7FC8F)
+F (..\shared\src\dds.c)(0x68E760CF)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-mlittle-endian -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../src -I ../hal/include -I ../shared/includes-I./RTE/_Test_lab4-ID:/programs/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-ID:/programs/Arm/Packs/ARM/Cortex_DFP/1.1.0/Device/ARMCM4/Include-D__UVISION_VERSION="543" -DARMCM4 -D_RTE_-o ./objects/dds.o -MMD)
+I (..\shared\includes\dds.h)(0x68E62D2E)
+I (..\shared\src\dds_sine_tbl257.dat)(0x68E299D1)
+F (..\bsp\src\FM4_leds_sw.c)(0x68DC20B4)()
+F (..\bsp\src\FM4_WM8731.c)(0x66FBC07C)()
+F (..\hal\src\HAL_SysTick.c)(0x68CBAD20)()
+F (..\hal\src\HAL_FM4_gpio.c)(0x686F9FB0)()
+F (..\hal\src\HAL_FM4_i2c.c)(0x66FBC07C)()
+F (..\hal\src\HAL_FM4_i2s.c)(0x68E76F9B)()
+F (RTE/Device/ARMCM4/ARMCM4_ac6.sct)(0x68C71986)()
+F (RTE/Device/ARMCM4/startup_ARMCM4.c)(0x68E8D0B6)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-mlittle-endian -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../src -I ../hal/include -I ../shared/includes-I./RTE/_Test_lab4-ID:/programs/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-ID:/programs/Arm/Packs/ARM/Cortex_DFP/1.1.0/Device/ARMCM4/Include-D__UVISION_VERSION="543" -DARMCM4 -D_RTE_-o ./objects/startup_armcm4.o -MMD)
+I (D:\programs\Arm\Packs\ARM\Cortex_DFP\1.1.0\Device\ARMCM4\Include\ARMCM4.h)(0x6645A9D4)
+I (D:\programs\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm4.h)(0x68F209D7)
+I (D:\programs\Arm\Packs\ARM\Cortex_DFP\1.1.0\Device\ARMCM4\Include\system_ARMCM4.h)(0x6645A9D4)
+F (RTE/Device/ARMCM4/system_ARMCM4.c)(0x68D03C16)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-mlittle-endian -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../src -I ../hal/include -I ../shared/includes-I./RTE/_Test_lab4-ID:/programs/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-ID:/programs/Arm/Packs/ARM/Cortex_DFP/1.1.0/Device/ARMCM4/Include-D__UVISION_VERSION="543" -DARMCM4 -D_RTE_-o ./objects/system_armcm4.o -MMD)
+I (D:\programs\Arm\Packs\ARM\Cortex_DFP\1.1.0\Device\ARMCM4\Include\ARMCM4.h)(0x6645A9D4)
+I (D:\programs\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm4.h)(0x68F209D7)
+I (D:\programs\Arm\Packs\ARM\Cortex_DFP\1.1.0\Device\ARMCM4\Include\system_ARMCM4.h)(0x6645A9D4)
+F (RTE/Device/S6E2CCAJ0A/startup_s6e2cc.s)(0x5460783E)()
+F (RTE/Device/S6E2CCAJ0A/system_s6e2cc.c)(0x570C9A4C)()
+F (RTE/Device/S6E2CCAJ0A/system_s6e2cc.h)(0x570C9A4C)()
