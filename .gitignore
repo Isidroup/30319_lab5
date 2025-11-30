@@ -1,0 +1,57 @@
+# Keil uVision files
+*.uvgui.*
+*.uvguix.*
+*.uvopt
+#*.uvoptx
+*.bak
+*.dep
+*.d
+*.crf
+*.htm
+*.i
+*.lnp
+*.lst
+*.map
+*.o
+*.obj
+*.axf
+*.tra
+*.scvd
+*.feed
+*.tmp
+*.ini
+*.plg
+*.build_log.htm
+*.cprj
+*.iex
+
+# Build output directories
+build/
+Build/
+Debug/
+Release/
+RTE/
+Objects/
+Listings/
+DebugConfig/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Temporary files
+*.log
+*.temp
