@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>_LAB3_DEBUG_</Define>
               <Undefine></Undefine>
-              <IncludePath>..\src;..\hal\include;..\bsp\include;..\shared\includes</IncludePath>
+              <IncludePath>..\src;..\hal\include;..\bsp\include;..\shared\include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -1267,7 +1267,7 @@
               <MiscControls></MiscControls>
               <Define>DEBUG_FSK</Define>
               <Undefine></Undefine>
-              <IncludePath>..\src;..\hal\include;..\shared\includes</IncludePath>
+              <IncludePath>..\src;..\hal\include;..\shared\include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -2092,7 +2092,7 @@
               <MiscControls></MiscControls>
               <Define>_LAB3_DEBUG_</Define>
               <Undefine></Undefine>
-              <IncludePath>..\src;..\hal\include;..\bsp\include;..\shared\includes</IncludePath>
+              <IncludePath>..\src;..\hal\include;..\bsp\include;..\shared\include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
