@@ -1,6 +1,6 @@
 /**
  * @file test_filtro.c
- * @date :2025/10/28 09:22:32
+ * @date :2026/11/11 20:20:26
  * @brief Programa de test para verificar el comportamiento del filtro IIR
  *
  * Este fichero contiene una serie de tests diseñados para caracterizar
@@ -56,11 +56,11 @@ int main() {
   // Test 3: Respuesta en frecuencia - Tono de 600 Hz
   // Permite medir la ganancia del filtro a 600 Hz
   {
-    dds16bits_t dds = {
-        .phaseAccumulator = 0,
-        .phaseIncrement = 439}; // Incremento de fase para generar 600 Hz a Fs=48 kHz
+    dds_16_bits_t dds = {
+        .phase_accumulator = 0,
+        .phase_increment = 439}; // Incremento de fase para generar 600 Hz a Fs=48 kHz
     for (int n = 0; n < 1024; n++) {
-      g_inputsample = DDS16Bits_getNextSample(&dds); // Genera muestra de señal senoidal
+      g_inputsample = dds_16_bits_get_next_sample(&dds); // Genera muestra de señal senoidal
       g_outputsample = iir_filtro_df2t(g_inputsample);
       // Comparar amplitud de g_outputsample con g_inputsample para obtener ganancia
     }
@@ -69,11 +69,11 @@ int main() {
 
   // Test 4: Respuesta en frecuencia - Tono de 3326 Hz
   // Permite medir la atenuación del filtro a 3326 Hz
-  dds16bits_t dds = {
-      .phaseAccumulator = 0,
-      .phaseIncrement = 2431}; // Incremento de fase para generar 3326 Hz a Fs=48 kHz
+  dds_16_bits_t dds = {
+      .phase_accumulator = 0,
+      .phase_increment = 2431}; // Incremento de fase para generar 3326 Hz a Fs=48 kHz
   for (int n = 0; n < 1024; n++) {
-    g_inputsample = DDS16Bits_getNextSample(&dds); // Genera muestra de señal senoidal
+    g_inputsample = dds_16_bits_get_next_sample(&dds); // Genera muestra de señal senoidal
     g_outputsample = iir_filtro_df2t(g_inputsample);
     // Comparar amplitud de g_outputsample con g_inputsample para obtener atenuación
   }

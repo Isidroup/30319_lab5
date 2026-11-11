@@ -323,7 +323,7 @@
             <PlainCh>0</PlainCh>
             <Ropi>0</Ropi>
             <Rwpi>0</Rwpi>
-            <wLevel>3</wLevel>
+            <wLevel>2</wLevel>
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
             <uC99>1</uC99>
@@ -337,7 +337,7 @@
             <v6WtE>0</v6WtE>
             <v6Rtti>0</v6Rtti>
             <VariousControls>
-              <MiscControls></MiscControls>
+              <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference</MiscControls>
               <Define>_LAB3_DEBUG_</Define>
               <Undefine></Undefine>
               <IncludePath>..\src;..\hal\include;..\bsp\include;..\shared\include</IncludePath>
@@ -355,7 +355,7 @@
             <useXO>0</useXO>
             <ClangAsOpt>1</ClangAsOpt>
             <VariousControls>
-              <MiscControls></MiscControls>
+              <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference</MiscControls>
               <Define></Define>
               <Undefine></Undefine>
               <IncludePath></IncludePath>
@@ -412,31 +412,31 @@
                 </CommonProperty>
                 <FileArmAds>
                   <Cads>
-                    <interw>2</interw>
-                    <Optim>0</Optim>
-                    <oTime>2</oTime>
-                    <SplitLS>2</SplitLS>
-                    <OneElfS>2</OneElfS>
-                    <Strict>2</Strict>
-                    <EnumInt>2</EnumInt>
-                    <PlainCh>2</PlainCh>
-                    <Ropi>2</Ropi>
-                    <Rwpi>2</Rwpi>
-                    <wLevel>0</wLevel>
-                    <uThumb>2</uThumb>
-                    <uSurpInc>2</uSurpInc>
-                    <uC99>2</uC99>
-                    <uGnu>2</uGnu>
-                    <useXO>2</useXO>
-                    <v6Lang>0</v6Lang>
-                    <v6LangP>0</v6LangP>
-                    <vShortEn>2</vShortEn>
-                    <vShortWch>2</vShortWch>
-                    <v6Lto>2</v6Lto>
-                    <v6WtE>2</v6WtE>
-                    <v6Rtti>2</v6Rtti>
+                    <interw>1</interw>
+                    <Optim>1</Optim>
+                    <oTime>0</oTime>
+                    <SplitLS>0</SplitLS>
+                    <OneElfS>1</OneElfS>
+                    <Strict>0</Strict>
+                    <EnumInt>0</EnumInt>
+                    <PlainCh>0</PlainCh>
+                    <Ropi>0</Ropi>
+                    <Rwpi>0</Rwpi>
+                    <wLevel>2</wLevel>
+                    <uThumb>0</uThumb>
+                    <uSurpInc>0</uSurpInc>
+                    <uC99>1</uC99>
+                    <uGnu>1</uGnu>
+                    <useXO>0</useXO>
+                    <v6Lang>3</v6Lang>
+                    <v6LangP>3</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
+                    <v6Lto>0</v6Lto>
+                    <v6WtE>0</v6WtE>
+                    <v6Rtti>0</v6Rtti>
                     <VariousControls>
-                      <MiscControls></MiscControls>
+                      <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference</MiscControls>
                       <Define></Define>
                       <Undefine></Undefine>
                       <IncludePath></IncludePath>
@@ -468,31 +468,31 @@
                 </CommonProperty>
                 <FileArmAds>
                   <Cads>
-                    <interw>2</interw>
-                    <Optim>0</Optim>
-                    <oTime>2</oTime>
-                    <SplitLS>2</SplitLS>
-                    <OneElfS>2</OneElfS>
-                    <Strict>2</Strict>
-                    <EnumInt>2</EnumInt>
-                    <PlainCh>2</PlainCh>
-                    <Ropi>2</Ropi>
-                    <Rwpi>2</Rwpi>
-                    <wLevel>0</wLevel>
-                    <uThumb>2</uThumb>
-                    <uSurpInc>2</uSurpInc>
-                    <uC99>2</uC99>
-                    <uGnu>2</uGnu>
-                    <useXO>2</useXO>
-                    <v6Lang>0</v6Lang>
-                    <v6LangP>0</v6LangP>
-                    <vShortEn>2</vShortEn>
-                    <vShortWch>2</vShortWch>
-                    <v6Lto>2</v6Lto>
-                    <v6WtE>2</v6WtE>
-                    <v6Rtti>2</v6Rtti>
+                    <interw>1</interw>
+                    <Optim>1</Optim>
+                    <oTime>0</oTime>
+                    <SplitLS>0</SplitLS>
+                    <OneElfS>1</OneElfS>
+                    <Strict>0</Strict>
+                    <EnumInt>0</EnumInt>
+                    <PlainCh>0</PlainCh>
+                    <Ropi>0</Ropi>
+                    <Rwpi>0</Rwpi>
+                    <wLevel>2</wLevel>
+                    <uThumb>0</uThumb>
+                    <uSurpInc>0</uSurpInc>
+                    <uC99>1</uC99>
+                    <uGnu>1</uGnu>
+                    <useXO>0</useXO>
+                    <v6Lang>3</v6Lang>
+                    <v6LangP>3</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
+                    <v6Lto>0</v6Lto>
+                    <v6WtE>0</v6WtE>
+                    <v6Rtti>0</v6Rtti>
                     <VariousControls>
-                      <MiscControls></MiscControls>
+                      <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference</MiscControls>
                       <Define></Define>
                       <Undefine></Undefine>
                       <IncludePath></IncludePath>
@@ -529,31 +529,31 @@
                 </CommonProperty>
                 <FileArmAds>
                   <Cads>
-                    <interw>2</interw>
-                    <Optim>0</Optim>
-                    <oTime>2</oTime>
-                    <SplitLS>2</SplitLS>
-                    <OneElfS>2</OneElfS>
-                    <Strict>2</Strict>
-                    <EnumInt>2</EnumInt>
-                    <PlainCh>2</PlainCh>
-                    <Ropi>2</Ropi>
-                    <Rwpi>2</Rwpi>
-                    <wLevel>0</wLevel>
-                    <uThumb>2</uThumb>
-                    <uSurpInc>2</uSurpInc>
-                    <uC99>2</uC99>
-                    <uGnu>2</uGnu>
-                    <useXO>2</useXO>
-                    <v6Lang>0</v6Lang>
-                    <v6LangP>0</v6LangP>
-                    <vShortEn>2</vShortEn>
-                    <vShortWch>2</vShortWch>
-                    <v6Lto>2</v6Lto>
-                    <v6WtE>2</v6WtE>
-                    <v6Rtti>2</v6Rtti>
+                    <interw>1</interw>
+                    <Optim>1</Optim>
+                    <oTime>0</oTime>
+                    <SplitLS>0</SplitLS>
+                    <OneElfS>1</OneElfS>
+                    <Strict>0</Strict>
+                    <EnumInt>0</EnumInt>
+                    <PlainCh>0</PlainCh>
+                    <Ropi>0</Ropi>
+                    <Rwpi>0</Rwpi>
+                    <wLevel>2</wLevel>
+                    <uThumb>0</uThumb>
+                    <uSurpInc>0</uSurpInc>
+                    <uC99>1</uC99>
+                    <uGnu>1</uGnu>
+                    <useXO>0</useXO>
+                    <v6Lang>3</v6Lang>
+                    <v6LangP>3</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
+                    <v6Lto>0</v6Lto>
+                    <v6WtE>0</v6WtE>
+                    <v6Rtti>0</v6Rtti>
                     <VariousControls>
-                      <MiscControls></MiscControls>
+                      <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference</MiscControls>
                       <Define></Define>
                       <Undefine></Undefine>
                       <IncludePath></IncludePath>
@@ -595,31 +595,31 @@
                 </CommonProperty>
                 <FileArmAds>
                   <Cads>
-                    <interw>2</interw>
-                    <Optim>0</Optim>
-                    <oTime>2</oTime>
-                    <SplitLS>2</SplitLS>
-                    <OneElfS>2</OneElfS>
-                    <Strict>2</Strict>
-                    <EnumInt>2</EnumInt>
-                    <PlainCh>2</PlainCh>
-                    <Ropi>2</Ropi>
-                    <Rwpi>2</Rwpi>
-                    <wLevel>0</wLevel>
-                    <uThumb>2</uThumb>
-                    <uSurpInc>2</uSurpInc>
-                    <uC99>2</uC99>
-                    <uGnu>2</uGnu>
-                    <useXO>2</useXO>
-                    <v6Lang>0</v6Lang>
-                    <v6LangP>0</v6LangP>
-                    <vShortEn>2</vShortEn>
-                    <vShortWch>2</vShortWch>
-                    <v6Lto>2</v6Lto>
-                    <v6WtE>2</v6WtE>
-                    <v6Rtti>2</v6Rtti>
+                    <interw>1</interw>
+                    <Optim>1</Optim>
+                    <oTime>0</oTime>
+                    <SplitLS>0</SplitLS>
+                    <OneElfS>1</OneElfS>
+                    <Strict>0</Strict>
+                    <EnumInt>0</EnumInt>
+                    <PlainCh>0</PlainCh>
+                    <Ropi>0</Ropi>
+                    <Rwpi>0</Rwpi>
+                    <wLevel>2</wLevel>
+                    <uThumb>0</uThumb>
+                    <uSurpInc>0</uSurpInc>
+                    <uC99>1</uC99>
+                    <uGnu>1</uGnu>
+                    <useXO>0</useXO>
+                    <v6Lang>3</v6Lang>
+                    <v6LangP>3</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
+                    <v6Lto>0</v6Lto>
+                    <v6WtE>0</v6WtE>
+                    <v6Rtti>0</v6Rtti>
                     <VariousControls>
-                      <MiscControls></MiscControls>
+                      <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference</MiscControls>
                       <Define></Define>
                       <Undefine></Undefine>
                       <IncludePath></IncludePath>
@@ -656,31 +656,31 @@
                 </CommonProperty>
                 <FileArmAds>
                   <Cads>
-                    <interw>2</interw>
-                    <Optim>0</Optim>
-                    <oTime>2</oTime>
-                    <SplitLS>2</SplitLS>
-                    <OneElfS>2</OneElfS>
-                    <Strict>2</Strict>
-                    <EnumInt>2</EnumInt>
-                    <PlainCh>2</PlainCh>
-                    <Ropi>2</Ropi>
-                    <Rwpi>2</Rwpi>
-                    <wLevel>0</wLevel>
-                    <uThumb>2</uThumb>
-                    <uSurpInc>2</uSurpInc>
-                    <uC99>2</uC99>
-                    <uGnu>2</uGnu>
-                    <useXO>2</useXO>
-                    <v6Lang>0</v6Lang>
-                    <v6LangP>0</v6LangP>
-                    <vShortEn>2</vShortEn>
-                    <vShortWch>2</vShortWch>
-                    <v6Lto>2</v6Lto>
-                    <v6WtE>2</v6WtE>
-                    <v6Rtti>2</v6Rtti>
+                    <interw>1</interw>
+                    <Optim>1</Optim>
+                    <oTime>0</oTime>
+                    <SplitLS>0</SplitLS>
+                    <OneElfS>1</OneElfS>
+                    <Strict>0</Strict>
+                    <EnumInt>0</EnumInt>
+                    <PlainCh>0</PlainCh>
+                    <Ropi>0</Ropi>
+                    <Rwpi>0</Rwpi>
+                    <wLevel>2</wLevel>
+                    <uThumb>0</uThumb>
+                    <uSurpInc>0</uSurpInc>
+                    <uC99>1</uC99>
+                    <uGnu>1</uGnu>
+                    <useXO>0</useXO>
+                    <v6Lang>3</v6Lang>
+                    <v6LangP>3</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
+                    <v6Lto>0</v6Lto>
+                    <v6WtE>0</v6WtE>
+                    <v6Rtti>0</v6Rtti>
                     <VariousControls>
-                      <MiscControls></MiscControls>
+                      <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference</MiscControls>
                       <Define></Define>
                       <Undefine></Undefine>
                       <IncludePath></IncludePath>
@@ -712,31 +712,31 @@
                 </CommonProperty>
                 <FileArmAds>
                   <Cads>
-                    <interw>2</interw>
-                    <Optim>0</Optim>
-                    <oTime>2</oTime>
-                    <SplitLS>2</SplitLS>
-                    <OneElfS>2</OneElfS>
-                    <Strict>2</Strict>
-                    <EnumInt>2</EnumInt>
-                    <PlainCh>2</PlainCh>
-                    <Ropi>2</Ropi>
-                    <Rwpi>2</Rwpi>
-                    <wLevel>0</wLevel>
-                    <uThumb>2</uThumb>
-                    <uSurpInc>2</uSurpInc>
-                    <uC99>2</uC99>
-                    <uGnu>2</uGnu>
-                    <useXO>2</useXO>
-                    <v6Lang>0</v6Lang>
-                    <v6LangP>0</v6LangP>
-                    <vShortEn>2</vShortEn>
-                    <vShortWch>2</vShortWch>
-                    <v6Lto>2</v6Lto>
-                    <v6WtE>2</v6WtE>
-                    <v6Rtti>2</v6Rtti>
+                    <interw>1</interw>
+                    <Optim>1</Optim>
+                    <oTime>0</oTime>
+                    <SplitLS>0</SplitLS>
+                    <OneElfS>1</OneElfS>
+                    <Strict>0</Strict>
+                    <EnumInt>0</EnumInt>
+                    <PlainCh>0</PlainCh>
+                    <Ropi>0</Ropi>
+                    <Rwpi>0</Rwpi>
+                    <wLevel>2</wLevel>
+                    <uThumb>0</uThumb>
+                    <uSurpInc>0</uSurpInc>
+                    <uC99>1</uC99>
+                    <uGnu>1</uGnu>
+                    <useXO>0</useXO>
+                    <v6Lang>3</v6Lang>
+                    <v6LangP>3</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
+                    <v6Lto>0</v6Lto>
+                    <v6WtE>0</v6WtE>
+                    <v6Rtti>0</v6Rtti>
                     <VariousControls>
-                      <MiscControls></MiscControls>
+                      <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference</MiscControls>
                       <Define></Define>
                       <Undefine></Undefine>
                       <IncludePath></IncludePath>
@@ -768,38 +768,38 @@
             </CommonProperty>
             <GroupArmAds>
               <Cads>
-                <interw>2</interw>
-                <Optim>0</Optim>
-                <oTime>2</oTime>
-                <SplitLS>2</SplitLS>
-                <OneElfS>2</OneElfS>
-                <Strict>2</Strict>
-                <EnumInt>2</EnumInt>
-                <PlainCh>2</PlainCh>
-                <Ropi>2</Ropi>
-                <Rwpi>2</Rwpi>
-                <wLevel>0</wLevel>
-                <uThumb>2</uThumb>
-                <uSurpInc>2</uSurpInc>
-                <uC99>2</uC99>
-                <uGnu>2</uGnu>
-                <useXO>2</useXO>
-                <v6Lang>0</v6Lang>
-                <v6LangP>0</v6LangP>
-                <vShortEn>2</vShortEn>
-                <vShortWch>2</vShortWch>
-                <v6Lto>2</v6Lto>
-                <v6WtE>2</v6WtE>
-                <v6Rtti>2</v6Rtti>
+                <interw>1</interw>
+                <Optim>1</Optim>
+                <oTime>0</oTime>
+                <SplitLS>0</SplitLS>
+                <OneElfS>1</OneElfS>
+                <Strict>0</Strict>
+                <EnumInt>0</EnumInt>
+                <PlainCh>0</PlainCh>
+                <Ropi>0</Ropi>
+                <Rwpi>0</Rwpi>
+                <wLevel>2</wLevel>
+                <uThumb>0</uThumb>
+                <uSurpInc>0</uSurpInc>
+                <uC99>1</uC99>
+                <uGnu>1</uGnu>
+                <useXO>0</useXO>
+                <v6Lang>3</v6Lang>
+                <v6LangP>3</v6LangP>
+                <vShortEn>0</vShortEn>
+                <vShortWch>0</vShortWch>
+                <v6Lto>0</v6Lto>
+                <v6WtE>0</v6WtE>
+                <v6Rtti>0</v6Rtti>
                 <VariousControls>
-                  <MiscControls></MiscControls>
+                  <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference</MiscControls>
                   <Define></Define>
                   <Undefine></Undefine>
                   <IncludePath></IncludePath>
                 </VariousControls>
               </Cads>
               <Aads>
-                <interw>2</interw>
+                <interw>1</interw>
                 <Ropi>2</Ropi>
                 <Rwpi>2</Rwpi>
                 <thumb>2</thumb>
@@ -810,7 +810,7 @@
                 <useXO>2</useXO>
                 <ClangAsOpt>0</ClangAsOpt>
                 <VariousControls>
-                  <MiscControls></MiscControls>
+                  <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference</MiscControls>
                   <Define></Define>
                   <Undefine></Undefine>
                   <IncludePath></IncludePath>
@@ -852,38 +852,38 @@
             </CommonProperty>
             <GroupArmAds>
               <Cads>
-                <interw>2</interw>
-                <Optim>0</Optim>
-                <oTime>2</oTime>
-                <SplitLS>2</SplitLS>
-                <OneElfS>2</OneElfS>
-                <Strict>2</Strict>
-                <EnumInt>2</EnumInt>
-                <PlainCh>2</PlainCh>
-                <Ropi>2</Ropi>
-                <Rwpi>2</Rwpi>
-                <wLevel>0</wLevel>
-                <uThumb>2</uThumb>
-                <uSurpInc>2</uSurpInc>
-                <uC99>2</uC99>
-                <uGnu>2</uGnu>
-                <useXO>2</useXO>
-                <v6Lang>0</v6Lang>
-                <v6LangP>0</v6LangP>
-                <vShortEn>2</vShortEn>
-                <vShortWch>2</vShortWch>
-                <v6Lto>2</v6Lto>
-                <v6WtE>2</v6WtE>
-                <v6Rtti>2</v6Rtti>
+                <interw>1</interw>
+                <Optim>1</Optim>
+                <oTime>0</oTime>
+                <SplitLS>0</SplitLS>
+                <OneElfS>1</OneElfS>
+                <Strict>0</Strict>
+                <EnumInt>0</EnumInt>
+                <PlainCh>0</PlainCh>
+                <Ropi>0</Ropi>
+                <Rwpi>0</Rwpi>
+                <wLevel>2</wLevel>
+                <uThumb>0</uThumb>
+                <uSurpInc>0</uSurpInc>
+                <uC99>1</uC99>
+                <uGnu>1</uGnu>
+                <useXO>0</useXO>
+                <v6Lang>3</v6Lang>
+                <v6LangP>3</v6LangP>
+                <vShortEn>0</vShortEn>
+                <vShortWch>0</vShortWch>
+                <v6Lto>0</v6Lto>
+                <v6WtE>0</v6WtE>
+                <v6Rtti>0</v6Rtti>
                 <VariousControls>
-                  <MiscControls></MiscControls>
+                  <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference</MiscControls>
                   <Define></Define>
                   <Undefine></Undefine>
                   <IncludePath></IncludePath>
                 </VariousControls>
               </Cads>
               <Aads>
-                <interw>2</interw>
+                <interw>1</interw>
                 <Ropi>2</Ropi>
                 <Rwpi>2</Rwpi>
                 <thumb>2</thumb>
@@ -894,7 +894,7 @@
                 <useXO>2</useXO>
                 <ClangAsOpt>0</ClangAsOpt>
                 <VariousControls>
-                  <MiscControls></MiscControls>
+                  <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference</MiscControls>
                   <Define></Define>
                   <Undefine></Undefine>
                   <IncludePath></IncludePath>
@@ -1250,7 +1250,7 @@
             <PlainCh>0</PlainCh>
             <Ropi>0</Ropi>
             <Rwpi>0</Rwpi>
-            <wLevel>3</wLevel>
+            <wLevel>2</wLevel>
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
             <uC99>1</uC99>
@@ -1264,7 +1264,7 @@
             <v6WtE>0</v6WtE>
             <v6Rtti>0</v6Rtti>
             <VariousControls>
-              <MiscControls></MiscControls>
+              <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference</MiscControls>
               <Define>DEBUG_FSK</Define>
               <Undefine></Undefine>
               <IncludePath>..\src;..\hal\include;..\shared\include</IncludePath>
@@ -1282,7 +1282,7 @@
             <useXO>0</useXO>
             <ClangAsOpt>1</ClangAsOpt>
             <VariousControls>
-              <MiscControls></MiscControls>
+              <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference</MiscControls>
               <Define></Define>
               <Undefine></Undefine>
               <IncludePath></IncludePath>
@@ -1339,31 +1339,31 @@
                 </CommonProperty>
                 <FileArmAds>
                   <Cads>
-                    <interw>2</interw>
-                    <Optim>0</Optim>
-                    <oTime>2</oTime>
-                    <SplitLS>2</SplitLS>
-                    <OneElfS>2</OneElfS>
-                    <Strict>2</Strict>
-                    <EnumInt>2</EnumInt>
-                    <PlainCh>2</PlainCh>
-                    <Ropi>2</Ropi>
-                    <Rwpi>2</Rwpi>
-                    <wLevel>0</wLevel>
-                    <uThumb>2</uThumb>
-                    <uSurpInc>2</uSurpInc>
-                    <uC99>2</uC99>
-                    <uGnu>2</uGnu>
-                    <useXO>2</useXO>
-                    <v6Lang>0</v6Lang>
-                    <v6LangP>0</v6LangP>
-                    <vShortEn>2</vShortEn>
-                    <vShortWch>2</vShortWch>
-                    <v6Lto>2</v6Lto>
-                    <v6WtE>2</v6WtE>
-                    <v6Rtti>2</v6Rtti>
+                    <interw>1</interw>
+                    <Optim>1</Optim>
+                    <oTime>0</oTime>
+                    <SplitLS>0</SplitLS>
+                    <OneElfS>1</OneElfS>
+                    <Strict>0</Strict>
+                    <EnumInt>0</EnumInt>
+                    <PlainCh>0</PlainCh>
+                    <Ropi>0</Ropi>
+                    <Rwpi>0</Rwpi>
+                    <wLevel>2</wLevel>
+                    <uThumb>0</uThumb>
+                    <uSurpInc>0</uSurpInc>
+                    <uC99>1</uC99>
+                    <uGnu>1</uGnu>
+                    <useXO>0</useXO>
+                    <v6Lang>3</v6Lang>
+                    <v6LangP>3</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
+                    <v6Lto>0</v6Lto>
+                    <v6WtE>0</v6WtE>
+                    <v6Rtti>0</v6Rtti>
                     <VariousControls>
-                      <MiscControls></MiscControls>
+                      <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference</MiscControls>
                       <Define></Define>
                       <Undefine></Undefine>
                       <IncludePath></IncludePath>
@@ -1395,31 +1395,31 @@
                 </CommonProperty>
                 <FileArmAds>
                   <Cads>
-                    <interw>2</interw>
-                    <Optim>0</Optim>
-                    <oTime>2</oTime>
-                    <SplitLS>2</SplitLS>
-                    <OneElfS>2</OneElfS>
-                    <Strict>2</Strict>
-                    <EnumInt>2</EnumInt>
-                    <PlainCh>2</PlainCh>
-                    <Ropi>2</Ropi>
-                    <Rwpi>2</Rwpi>
-                    <wLevel>0</wLevel>
-                    <uThumb>2</uThumb>
-                    <uSurpInc>2</uSurpInc>
-                    <uC99>2</uC99>
-                    <uGnu>2</uGnu>
-                    <useXO>2</useXO>
-                    <v6Lang>0</v6Lang>
-                    <v6LangP>0</v6LangP>
-                    <vShortEn>2</vShortEn>
-                    <vShortWch>2</vShortWch>
-                    <v6Lto>2</v6Lto>
-                    <v6WtE>2</v6WtE>
-                    <v6Rtti>2</v6Rtti>
+                    <interw>1</interw>
+                    <Optim>1</Optim>
+                    <oTime>0</oTime>
+                    <SplitLS>0</SplitLS>
+                    <OneElfS>1</OneElfS>
+                    <Strict>0</Strict>
+                    <EnumInt>0</EnumInt>
+                    <PlainCh>0</PlainCh>
+                    <Ropi>0</Ropi>
+                    <Rwpi>0</Rwpi>
+                    <wLevel>2</wLevel>
+                    <uThumb>0</uThumb>
+                    <uSurpInc>0</uSurpInc>
+                    <uC99>1</uC99>
+                    <uGnu>1</uGnu>
+                    <useXO>0</useXO>
+                    <v6Lang>3</v6Lang>
+                    <v6LangP>3</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
+                    <v6Lto>0</v6Lto>
+                    <v6WtE>0</v6WtE>
+                    <v6Rtti>0</v6Rtti>
                     <VariousControls>
-                      <MiscControls></MiscControls>
+                      <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference</MiscControls>
                       <Define></Define>
                       <Undefine></Undefine>
                       <IncludePath></IncludePath>
@@ -1461,31 +1461,31 @@
                 </CommonProperty>
                 <FileArmAds>
                   <Cads>
-                    <interw>2</interw>
-                    <Optim>0</Optim>
-                    <oTime>2</oTime>
-                    <SplitLS>2</SplitLS>
-                    <OneElfS>2</OneElfS>
-                    <Strict>2</Strict>
-                    <EnumInt>2</EnumInt>
-                    <PlainCh>2</PlainCh>
-                    <Ropi>2</Ropi>
-                    <Rwpi>2</Rwpi>
-                    <wLevel>0</wLevel>
-                    <uThumb>2</uThumb>
-                    <uSurpInc>2</uSurpInc>
-                    <uC99>2</uC99>
-                    <uGnu>2</uGnu>
-                    <useXO>2</useXO>
-                    <v6Lang>0</v6Lang>
-                    <v6LangP>0</v6LangP>
-                    <vShortEn>2</vShortEn>
-                    <vShortWch>2</vShortWch>
-                    <v6Lto>2</v6Lto>
-                    <v6WtE>2</v6WtE>
-                    <v6Rtti>2</v6Rtti>
+                    <interw>1</interw>
+                    <Optim>1</Optim>
+                    <oTime>0</oTime>
+                    <SplitLS>0</SplitLS>
+                    <OneElfS>1</OneElfS>
+                    <Strict>0</Strict>
+                    <EnumInt>0</EnumInt>
+                    <PlainCh>0</PlainCh>
+                    <Ropi>0</Ropi>
+                    <Rwpi>0</Rwpi>
+                    <wLevel>2</wLevel>
+                    <uThumb>0</uThumb>
+                    <uSurpInc>0</uSurpInc>
+                    <uC99>1</uC99>
+                    <uGnu>1</uGnu>
+                    <useXO>0</useXO>
+                    <v6Lang>3</v6Lang>
+                    <v6LangP>3</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
+                    <v6Lto>0</v6Lto>
+                    <v6WtE>0</v6WtE>
+                    <v6Rtti>0</v6Rtti>
                     <VariousControls>
-                      <MiscControls></MiscControls>
+                      <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference</MiscControls>
                       <Define></Define>
                       <Undefine></Undefine>
                       <IncludePath></IncludePath>
@@ -1542,38 +1542,38 @@
             </CommonProperty>
             <GroupArmAds>
               <Cads>
-                <interw>2</interw>
-                <Optim>0</Optim>
-                <oTime>2</oTime>
-                <SplitLS>2</SplitLS>
-                <OneElfS>2</OneElfS>
-                <Strict>2</Strict>
-                <EnumInt>2</EnumInt>
-                <PlainCh>2</PlainCh>
-                <Ropi>2</Ropi>
-                <Rwpi>2</Rwpi>
-                <wLevel>0</wLevel>
-                <uThumb>2</uThumb>
-                <uSurpInc>2</uSurpInc>
-                <uC99>2</uC99>
-                <uGnu>2</uGnu>
-                <useXO>2</useXO>
-                <v6Lang>0</v6Lang>
-                <v6LangP>0</v6LangP>
-                <vShortEn>2</vShortEn>
-                <vShortWch>2</vShortWch>
-                <v6Lto>2</v6Lto>
-                <v6WtE>2</v6WtE>
-                <v6Rtti>2</v6Rtti>
+                <interw>1</interw>
+                <Optim>1</Optim>
+                <oTime>0</oTime>
+                <SplitLS>0</SplitLS>
+                <OneElfS>1</OneElfS>
+                <Strict>0</Strict>
+                <EnumInt>0</EnumInt>
+                <PlainCh>0</PlainCh>
+                <Ropi>0</Ropi>
+                <Rwpi>0</Rwpi>
+                <wLevel>2</wLevel>
+                <uThumb>0</uThumb>
+                <uSurpInc>0</uSurpInc>
+                <uC99>1</uC99>
+                <uGnu>1</uGnu>
+                <useXO>0</useXO>
+                <v6Lang>3</v6Lang>
+                <v6LangP>3</v6LangP>
+                <vShortEn>0</vShortEn>
+                <vShortWch>0</vShortWch>
+                <v6Lto>0</v6Lto>
+                <v6WtE>0</v6WtE>
+                <v6Rtti>0</v6Rtti>
                 <VariousControls>
-                  <MiscControls></MiscControls>
+                  <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference</MiscControls>
                   <Define></Define>
                   <Undefine></Undefine>
                   <IncludePath></IncludePath>
                 </VariousControls>
               </Cads>
               <Aads>
-                <interw>2</interw>
+                <interw>1</interw>
                 <Ropi>2</Ropi>
                 <Rwpi>2</Rwpi>
                 <thumb>2</thumb>
@@ -1584,7 +1584,7 @@
                 <useXO>2</useXO>
                 <ClangAsOpt>0</ClangAsOpt>
                 <VariousControls>
-                  <MiscControls></MiscControls>
+                  <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference</MiscControls>
                   <Define></Define>
                   <Undefine></Undefine>
                   <IncludePath></IncludePath>
@@ -1626,38 +1626,38 @@
             </CommonProperty>
             <GroupArmAds>
               <Cads>
-                <interw>2</interw>
-                <Optim>0</Optim>
-                <oTime>2</oTime>
-                <SplitLS>2</SplitLS>
-                <OneElfS>2</OneElfS>
-                <Strict>2</Strict>
-                <EnumInt>2</EnumInt>
-                <PlainCh>2</PlainCh>
-                <Ropi>2</Ropi>
-                <Rwpi>2</Rwpi>
-                <wLevel>0</wLevel>
-                <uThumb>2</uThumb>
-                <uSurpInc>2</uSurpInc>
-                <uC99>2</uC99>
-                <uGnu>2</uGnu>
-                <useXO>2</useXO>
-                <v6Lang>0</v6Lang>
-                <v6LangP>0</v6LangP>
-                <vShortEn>2</vShortEn>
-                <vShortWch>2</vShortWch>
-                <v6Lto>2</v6Lto>
-                <v6WtE>2</v6WtE>
-                <v6Rtti>2</v6Rtti>
+                <interw>1</interw>
+                <Optim>1</Optim>
+                <oTime>0</oTime>
+                <SplitLS>0</SplitLS>
+                <OneElfS>1</OneElfS>
+                <Strict>0</Strict>
+                <EnumInt>0</EnumInt>
+                <PlainCh>0</PlainCh>
+                <Ropi>0</Ropi>
+                <Rwpi>0</Rwpi>
+                <wLevel>2</wLevel>
+                <uThumb>0</uThumb>
+                <uSurpInc>0</uSurpInc>
+                <uC99>1</uC99>
+                <uGnu>1</uGnu>
+                <useXO>0</useXO>
+                <v6Lang>3</v6Lang>
+                <v6LangP>3</v6LangP>
+                <vShortEn>0</vShortEn>
+                <vShortWch>0</vShortWch>
+                <v6Lto>0</v6Lto>
+                <v6WtE>0</v6WtE>
+                <v6Rtti>0</v6Rtti>
                 <VariousControls>
-                  <MiscControls></MiscControls>
+                  <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference</MiscControls>
                   <Define></Define>
                   <Undefine></Undefine>
                   <IncludePath></IncludePath>
                 </VariousControls>
               </Cads>
               <Aads>
-                <interw>2</interw>
+                <interw>1</interw>
                 <Ropi>2</Ropi>
                 <Rwpi>2</Rwpi>
                 <thumb>2</thumb>
@@ -1668,7 +1668,7 @@
                 <useXO>2</useXO>
                 <ClangAsOpt>0</ClangAsOpt>
                 <VariousControls>
-                  <MiscControls></MiscControls>
+                  <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference</MiscControls>
                   <Define></Define>
                   <Undefine></Undefine>
                   <IncludePath></IncludePath>
@@ -1705,31 +1705,31 @@
                 </CommonProperty>
                 <FileArmAds>
                   <Cads>
-                    <interw>2</interw>
-                    <Optim>0</Optim>
-                    <oTime>2</oTime>
-                    <SplitLS>2</SplitLS>
-                    <OneElfS>2</OneElfS>
-                    <Strict>2</Strict>
-                    <EnumInt>2</EnumInt>
-                    <PlainCh>2</PlainCh>
-                    <Ropi>2</Ropi>
-                    <Rwpi>2</Rwpi>
-                    <wLevel>0</wLevel>
-                    <uThumb>2</uThumb>
-                    <uSurpInc>2</uSurpInc>
-                    <uC99>2</uC99>
-                    <uGnu>2</uGnu>
-                    <useXO>2</useXO>
-                    <v6Lang>0</v6Lang>
-                    <v6LangP>0</v6LangP>
-                    <vShortEn>2</vShortEn>
-                    <vShortWch>2</vShortWch>
-                    <v6Lto>2</v6Lto>
-                    <v6WtE>2</v6WtE>
-                    <v6Rtti>2</v6Rtti>
+                    <interw>1</interw>
+                    <Optim>1</Optim>
+                    <oTime>0</oTime>
+                    <SplitLS>0</SplitLS>
+                    <OneElfS>1</OneElfS>
+                    <Strict>0</Strict>
+                    <EnumInt>0</EnumInt>
+                    <PlainCh>0</PlainCh>
+                    <Ropi>0</Ropi>
+                    <Rwpi>0</Rwpi>
+                    <wLevel>2</wLevel>
+                    <uThumb>0</uThumb>
+                    <uSurpInc>0</uSurpInc>
+                    <uC99>1</uC99>
+                    <uGnu>1</uGnu>
+                    <useXO>0</useXO>
+                    <v6Lang>3</v6Lang>
+                    <v6LangP>3</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
+                    <v6Lto>0</v6Lto>
+                    <v6WtE>0</v6WtE>
+                    <v6Rtti>0</v6Rtti>
                     <VariousControls>
-                      <MiscControls></MiscControls>
+                      <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference</MiscControls>
                       <Define></Define>
                       <Undefine></Undefine>
                       <IncludePath></IncludePath>
@@ -2089,7 +2089,7 @@
             <v6WtE>0</v6WtE>
             <v6Rtti>0</v6Rtti>
             <VariousControls>
-              <MiscControls></MiscControls>
+              <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference</MiscControls>
               <Define>_LAB3_DEBUG_</Define>
               <Undefine></Undefine>
               <IncludePath>..\src;..\hal\include;..\bsp\include;..\shared\include</IncludePath>
@@ -2107,7 +2107,7 @@
             <useXO>0</useXO>
             <ClangAsOpt>1</ClangAsOpt>
             <VariousControls>
-              <MiscControls></MiscControls>
+              <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference</MiscControls>
               <Define></Define>
               <Undefine></Undefine>
               <IncludePath></IncludePath>
@@ -2174,38 +2174,38 @@
             </CommonProperty>
             <GroupArmAds>
               <Cads>
-                <interw>2</interw>
-                <Optim>0</Optim>
-                <oTime>2</oTime>
-                <SplitLS>2</SplitLS>
-                <OneElfS>2</OneElfS>
-                <Strict>2</Strict>
-                <EnumInt>2</EnumInt>
-                <PlainCh>2</PlainCh>
-                <Ropi>2</Ropi>
-                <Rwpi>2</Rwpi>
-                <wLevel>0</wLevel>
-                <uThumb>2</uThumb>
-                <uSurpInc>2</uSurpInc>
-                <uC99>2</uC99>
-                <uGnu>2</uGnu>
-                <useXO>2</useXO>
-                <v6Lang>0</v6Lang>
-                <v6LangP>0</v6LangP>
-                <vShortEn>2</vShortEn>
-                <vShortWch>2</vShortWch>
-                <v6Lto>2</v6Lto>
-                <v6WtE>2</v6WtE>
-                <v6Rtti>2</v6Rtti>
+                <interw>1</interw>
+                <Optim>1</Optim>
+                <oTime>0</oTime>
+                <SplitLS>0</SplitLS>
+                <OneElfS>1</OneElfS>
+                <Strict>0</Strict>
+                <EnumInt>0</EnumInt>
+                <PlainCh>0</PlainCh>
+                <Ropi>0</Ropi>
+                <Rwpi>0</Rwpi>
+                <wLevel>2</wLevel>
+                <uThumb>0</uThumb>
+                <uSurpInc>0</uSurpInc>
+                <uC99>1</uC99>
+                <uGnu>1</uGnu>
+                <useXO>0</useXO>
+                <v6Lang>3</v6Lang>
+                <v6LangP>3</v6LangP>
+                <vShortEn>0</vShortEn>
+                <vShortWch>0</vShortWch>
+                <v6Lto>0</v6Lto>
+                <v6WtE>0</v6WtE>
+                <v6Rtti>0</v6Rtti>
                 <VariousControls>
-                  <MiscControls></MiscControls>
+                  <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference</MiscControls>
                   <Define></Define>
                   <Undefine></Undefine>
                   <IncludePath></IncludePath>
                 </VariousControls>
               </Cads>
               <Aads>
-                <interw>2</interw>
+                <interw>1</interw>
                 <Ropi>2</Ropi>
                 <Rwpi>2</Rwpi>
                 <thumb>2</thumb>
@@ -2216,7 +2216,7 @@
                 <useXO>2</useXO>
                 <ClangAsOpt>0</ClangAsOpt>
                 <VariousControls>
-                  <MiscControls></MiscControls>
+                  <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference</MiscControls>
                   <Define></Define>
                   <Undefine></Undefine>
                   <IncludePath></IncludePath>
