@@ -1,6 +1,6 @@
 /**
  * @file test_filtro.c
- * @date :2026/11/11 20:59:04
+ * @date :2026/11/12 11:17:02
  * @brief Programa de test para verificar el comportamiento del filtro IIR
  *
  * Este fichero contiene una serie de tests diseñados para caracterizar
@@ -32,11 +32,11 @@
  *       (4,8 kHz) y la frecuencia de diseño (48 kHz).
  */
 
-#include "ARMCM4.h"
-#include "dds.h"
-#include "ejercicios.h"
-#include <stdint.h>
+ #include "dds.h"
+ #include "ejercicios.h"
+ #include <stdint.h>
 
+ #include "ARMCM4.h"
 
 // Variables globales para el test, se representaran en logic analyzer
 __attribute__((section(".bss.noinit")))
@@ -54,7 +54,7 @@ void SysTick_Init__sample_period(void);
 static inline void SysTick_Wait_sample_period(void);
 
 
-int main() {
+int main(void) {
 
   SysTick_Init__sample_period(); // Inicializa SysTick para generar una base de tiempos de 208
 

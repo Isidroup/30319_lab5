@@ -64,8 +64,8 @@
  */
 typedef union WM8731_data
 {
-  int32_t uint32bit;    /**< Acceso a 32 bits */
-  int16_t uint16bit[2]; /**< Acceso a dos canales de 16 bits */
+  uint32_t uint32bit;    /**< Acceso a 32 bits */
+  uint16_t uint16bit[2]; /**< Acceso a dos canales de 16 bits */
 } WM8731_data_t;
 
 /**

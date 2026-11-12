@@ -337,7 +337,7 @@
             <v6WtE>0</v6WtE>
             <v6Rtti>0</v6Rtti>
             <VariousControls>
-              <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference</MiscControls>
+              <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference -Wno-c11-extensions</MiscControls>
               <Define>_LAB3_DEBUG_</Define>
               <Undefine></Undefine>
               <IncludePath>..\src;..\hal\include;..\bsp\include;..\shared\include</IncludePath>
@@ -355,7 +355,7 @@
             <useXO>0</useXO>
             <ClangAsOpt>1</ClangAsOpt>
             <VariousControls>
-              <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference</MiscControls>
+              <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
               <IncludePath></IncludePath>
@@ -436,7 +436,7 @@
                     <v6WtE>0</v6WtE>
                     <v6Rtti>0</v6Rtti>
                     <VariousControls>
-                      <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference</MiscControls>
+                      <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference -Wno-c11-extensions</MiscControls>
                       <Define></Define>
                       <Undefine></Undefine>
                       <IncludePath></IncludePath>
@@ -492,7 +492,7 @@
                     <v6WtE>0</v6WtE>
                     <v6Rtti>0</v6Rtti>
                     <VariousControls>
-                      <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference</MiscControls>
+                      <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference -Wno-c11-extensions</MiscControls>
                       <Define></Define>
                       <Undefine></Undefine>
                       <IncludePath></IncludePath>
@@ -553,7 +553,7 @@
                     <v6WtE>0</v6WtE>
                     <v6Rtti>0</v6Rtti>
                     <VariousControls>
-                      <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference</MiscControls>
+                      <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference -Wno-c11-extensions</MiscControls>
                       <Define></Define>
                       <Undefine></Undefine>
                       <IncludePath></IncludePath>
@@ -619,7 +619,7 @@
                     <v6WtE>0</v6WtE>
                     <v6Rtti>0</v6Rtti>
                     <VariousControls>
-                      <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference</MiscControls>
+                      <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference -Wno-c11-extensions</MiscControls>
                       <Define></Define>
                       <Undefine></Undefine>
                       <IncludePath></IncludePath>
@@ -680,7 +680,7 @@
                     <v6WtE>0</v6WtE>
                     <v6Rtti>0</v6Rtti>
                     <VariousControls>
-                      <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference</MiscControls>
+                      <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference -Wno-c11-extensions</MiscControls>
                       <Define></Define>
                       <Undefine></Undefine>
                       <IncludePath></IncludePath>
@@ -736,7 +736,7 @@
                     <v6WtE>0</v6WtE>
                     <v6Rtti>0</v6Rtti>
                     <VariousControls>
-                      <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference</MiscControls>
+                      <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference -Wno-c11-extensions</MiscControls>
                       <Define></Define>
                       <Undefine></Undefine>
                       <IncludePath></IncludePath>
@@ -792,7 +792,7 @@
                 <v6WtE>0</v6WtE>
                 <v6Rtti>0</v6Rtti>
                 <VariousControls>
-                  <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference</MiscControls>
+                  <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference -Wno-c11-extensions</MiscControls>
                   <Define></Define>
                   <Undefine></Undefine>
                   <IncludePath></IncludePath>
@@ -810,7 +810,7 @@
                 <useXO>2</useXO>
                 <ClangAsOpt>0</ClangAsOpt>
                 <VariousControls>
-                  <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference</MiscControls>
+                  <MiscControls></MiscControls>
                   <Define></Define>
                   <Undefine></Undefine>
                   <IncludePath></IncludePath>
@@ -876,7 +876,7 @@
                 <v6WtE>0</v6WtE>
                 <v6Rtti>0</v6Rtti>
                 <VariousControls>
-                  <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference</MiscControls>
+                  <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference -Wno-c11-extensions</MiscControls>
                   <Define></Define>
                   <Undefine></Undefine>
                   <IncludePath></IncludePath>
@@ -894,7 +894,7 @@
                 <useXO>2</useXO>
                 <ClangAsOpt>0</ClangAsOpt>
                 <VariousControls>
-                  <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference</MiscControls>
+                  <MiscControls></MiscControls>
                   <Define></Define>
                   <Undefine></Undefine>
                   <IncludePath></IncludePath>
@@ -1264,7 +1264,7 @@
             <v6WtE>0</v6WtE>
             <v6Rtti>0</v6Rtti>
             <VariousControls>
-              <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference</MiscControls>
+              <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference -Wno-c11-extensions</MiscControls>
               <Define>DEBUG_FSK</Define>
               <Undefine></Undefine>
               <IncludePath>..\src;..\hal\include;..\shared\include</IncludePath>
@@ -1282,7 +1282,7 @@
             <useXO>0</useXO>
             <ClangAsOpt>1</ClangAsOpt>
             <VariousControls>
-              <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference</MiscControls>
+              <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
               <IncludePath></IncludePath>
@@ -1363,7 +1363,7 @@
                     <v6WtE>0</v6WtE>
                     <v6Rtti>0</v6Rtti>
                     <VariousControls>
-                      <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference</MiscControls>
+                      <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference -Wno-c11-extensions</MiscControls>
                       <Define></Define>
                       <Undefine></Undefine>
                       <IncludePath></IncludePath>
@@ -1419,7 +1419,7 @@
                     <v6WtE>0</v6WtE>
                     <v6Rtti>0</v6Rtti>
                     <VariousControls>
-                      <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference</MiscControls>
+                      <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference -Wno-c11-extensions</MiscControls>
                       <Define></Define>
                       <Undefine></Undefine>
                       <IncludePath></IncludePath>
@@ -1485,7 +1485,7 @@
                     <v6WtE>0</v6WtE>
                     <v6Rtti>0</v6Rtti>
                     <VariousControls>
-                      <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference</MiscControls>
+                      <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference -Wno-c11-extensions</MiscControls>
                       <Define></Define>
                       <Undefine></Undefine>
                       <IncludePath></IncludePath>
@@ -1566,7 +1566,7 @@
                 <v6WtE>0</v6WtE>
                 <v6Rtti>0</v6Rtti>
                 <VariousControls>
-                  <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference</MiscControls>
+                  <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference -Wno-c11-extensions</MiscControls>
                   <Define></Define>
                   <Undefine></Undefine>
                   <IncludePath></IncludePath>
@@ -1584,7 +1584,7 @@
                 <useXO>2</useXO>
                 <ClangAsOpt>0</ClangAsOpt>
                 <VariousControls>
-                  <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference</MiscControls>
+                  <MiscControls></MiscControls>
                   <Define></Define>
                   <Undefine></Undefine>
                   <IncludePath></IncludePath>
@@ -1650,7 +1650,7 @@
                 <v6WtE>0</v6WtE>
                 <v6Rtti>0</v6Rtti>
                 <VariousControls>
-                  <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference</MiscControls>
+                  <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference -Wno-c11-extensions</MiscControls>
                   <Define></Define>
                   <Undefine></Undefine>
                   <IncludePath></IncludePath>
@@ -1668,7 +1668,7 @@
                 <useXO>2</useXO>
                 <ClangAsOpt>0</ClangAsOpt>
                 <VariousControls>
-                  <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference</MiscControls>
+                  <MiscControls></MiscControls>
                   <Define></Define>
                   <Undefine></Undefine>
                   <IncludePath></IncludePath>
@@ -1729,7 +1729,7 @@
                     <v6WtE>0</v6WtE>
                     <v6Rtti>0</v6Rtti>
                     <VariousControls>
-                      <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference</MiscControls>
+                      <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference -Wno-c11-extensions</MiscControls>
                       <Define></Define>
                       <Undefine></Undefine>
                       <IncludePath></IncludePath>
@@ -2089,7 +2089,7 @@
             <v6WtE>0</v6WtE>
             <v6Rtti>0</v6Rtti>
             <VariousControls>
-              <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference</MiscControls>
+              <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference -Wno-c11-extensions</MiscControls>
               <Define>_LAB3_DEBUG_</Define>
               <Undefine></Undefine>
               <IncludePath>..\src;..\hal\include;..\bsp\include;..\shared\include</IncludePath>
@@ -2107,7 +2107,7 @@
             <useXO>0</useXO>
             <ClangAsOpt>1</ClangAsOpt>
             <VariousControls>
-              <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference</MiscControls>
+              <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
               <IncludePath></IncludePath>
@@ -2198,7 +2198,7 @@
                 <v6WtE>0</v6WtE>
                 <v6Rtti>0</v6Rtti>
                 <VariousControls>
-                  <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference</MiscControls>
+                  <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference -Wno-c11-extensions</MiscControls>
                   <Define></Define>
                   <Undefine></Undefine>
                   <IncludePath></IncludePath>
@@ -2216,7 +2216,7 @@
                 <useXO>2</useXO>
                 <ClangAsOpt>0</ClangAsOpt>
                 <VariousControls>
-                  <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference</MiscControls>
+                  <MiscControls></MiscControls>
                   <Define></Define>
                   <Undefine></Undefine>
                   <IncludePath></IncludePath>

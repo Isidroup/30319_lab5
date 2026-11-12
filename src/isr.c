@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file isr.c
  * @brief Rutinas de servicio de interrupción para el periférico I2S
  *
@@ -66,38 +66,60 @@ void PRGCRC_I2S_IRQHandler(void)
   // GESTIÓN DE TRANSMISIÓN I2S (TX)
   // ---------------------------------------------------------------------------
 
-  /**
-   * Condición: Buffer de transmisión I2S tiene espacio disponible
-   * Acción: Extraer muestra del buffer circular y enviar al códec
-   */
-  if (I2S_isTxBufferFree()) {
+     // La condición de interrupción es «la FIFO tiene hueco». Se rellena hasta
+    // eliminarla para evitar que la ISR se reactive inmediatamente.
 
-    // Opcional: Toggle de GPIO para medición de timing con osciloscopio/analizador lógico
-    //GPIO_ChannelToggle(P1F);
-
-    // Extraer siguiente muestra del buffer circular de transmisión
-    int16_t txdata;
-    uint8_t error = circ_buf_pop(&g_tx_buffer, &txdata);
-
-    // Verificar que la extracción fue exitosa
-    if (error != 0) {
-       /**
-        * ERROR: Buffer de transmisión vacío
-        * Causa probable:
-        * - El bucle principal no genera datos suficientemente rápido
-        * - El buffer es demasiado pequeño
-        * - La ISR se está ejecutando más rápido que el procesamiento
-        */
-        __BKPT(2); // Breakpoint de error crítico
-    }
-
-    /**
-     * Transmitir muestra al códec WM8731
-     * - Canal izquierdo: señal procesada (txdata)
-     * - Canal derecho: silencio (0)
+    /*
+     *                            ▼
+     *                  ╱───────────────────╲
+     *                 ╱  ¿Hay espacio en    ╲ no
+     *    ┌──────────►⟨       FIFO tx?        ⟩─────────┐
+     *    │            ╲                     ╱          │
+     *    │             ╲───────────────────╱           │
+     *    │                       │ sí                  │
+     *    │                       ▼                     │
+     *    │             ╱───────────────────╲           │
+     *    │            ╱  ¿g_tx_buffer tiene ╲          │
+     *    │           ⟨       una muestra?    ⟩         │
+     *    │            ╲                     ╱          │
+     *    │             ╲───────────────────╱           │
+     *    │                ╱             ╲              │
+     *    │            sí ╱               ╲ no          │
+     *    │              ▼                 ▼            │
+     *    │ ┌──────────────┐     ┌─────────────────┐    │
+     *    │ │ Extraer      │     │ Incrementar     │    │
+     *    │ │ muestra y    │     │ contador de     │    │
+     *    │ │ escribirla   │     │ infraflujo      │    │
+     *    │ │ en FIFO I2S  │     │ software y      │    │
+     *    │ └──────┬───────┘     │ escribir        │    │
+     *    │        │             │ silencio        │    │
+     *    │        │             └────────┬────────┘    │
+     *    │        │                      │             │
+     *    │        └──────────┬───────────┘             │
+     *    │                   │ (Repetir while)         │
+     *    └───────────────────┴                         │
+     *                                                  │
+     *                                                  ▼
+     *                                               ╭──────╮
+     *                                               │ Fin  │
+     *                                               ╰──────╯
      */
-    FM4_WM8731_wr(txdata, 0);
+
+     while (I2S_isTxBufferFree()) {
+      int16_t txdata;
+
+      if (circ_buf_pop(&g_tx_buffer, &txdata) == 0) {
+        // Muestra FSK en el canal izquierdo y silencio en el derecho.
+        FM4_WM8731_wr(txdata, 0);
+      } else {
+        // El productor no ha llegado a tiempo. El silencio atiende la petición
+        // del periférico y permite que main() vuelva a ejecutarse.
+        g_tx_software_underflow++;
+        FM4_WM8731_wr(0, 0);
+      }
+    }
   }
+
 
   // ---------------------------------------------------------------------------
   // GESTIÓN DE RECEPCIÓN I2S (RX)
@@ -109,29 +131,37 @@ void PRGCRC_I2S_IRQHandler(void)
    */
   if (I2S_isRxBufferNotEmpty()) {
 
-    // Leer muestra estéreo del códec WM8731
-
-      //TODO: Implementar lectura de datos del códec WM8731
-
-    /**
-     * Almacenar solo el canal izquierdo en el buffer circular
-     * El canal derecho se descarta en esta implementación
+    /*
+     *                            ▼
+     *                  ╱───────────────────╲
+     *                 ╱  ¿Hay muestras en   ╲ no
+     *    ┌──────────►⟨       FIFO rx?        ⟩───────────────────────────────────┐
+     *    │            ╲                     ╱                                    │
+     *    │             ╲───────────────────╱                                     │
+     *    │                       │ sí                                            │
+     *    │                       ▼                                               │
+     *    │                ┌──────────────┐                                       │
+     *    │                │ leer muestra │                                       │
+     *    │                └──────┬───────┘                                       │
+     *    │                       ▼                                               │
+     *    │        ┌───────────────────────────────┐                              │
+     *    │        │ guarda muestra en g_rx_buffer │                              │
+     *    │        └───────────────────────────────┘                              │
+     *    │                       │                                               │
+     *    │                       ▼                                               │
+     *    │                ╱────────────────╲  no  ┌────────────────────────────┐ │
+     *    │               ╱   ¿Apilado con   \─────│ Buffer software lleno      │─┼
+     *    │               ╲       exito?     ╱     │ Descartar muestra          │ │
+     *    │                ╲────────────────╱      │ g_rx_software_overflow++   │ │
+     *    │                          │ sí          └────────────────────────────┘ │
+     *    │                          │ (Repetir while)                            │
+     *    └──────────────────────────┴                                            │
+     *                                                                            │
+     *                                                                            ▼
+     *                                                                         ╭──────╮
+     *                                                                         │ Fin  │
+     *                                                                         ╰──────╯
      */
-
-       //TODO: Implementar inserción de dato en el buffer circular
-    uint8_t error_push = ...
-
-    // Verificar que la inserción fue exitosa
-    if (error_push != 0) {
-      /**
-       * ERROR: Buffer de recepción lleno
-       * Causa probable:
-       * - El bucle principal no procesa datos suficientemente rápido
-       * - El buffer es demasiado pequeño
-       * - El procesamiento consume más tiempo que el periodo de muestreo
-       */
-      __BKPT(3); // Breakpoint de error crítico
-    }
   }
 }
 

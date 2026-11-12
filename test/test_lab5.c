@@ -1,6 +1,6 @@
 /**
  * @file test_lab5.c
- * @date :2025/11/10 09:13:20
+ * @date :2026/11/12 11:17:12
  *
  * @brief Programa de test integrado para los laboratorios 4 y 5
  *
@@ -30,6 +30,8 @@
 #include "lab4.h"
 #include <stdint.h>
 #include <stddef.h>
+
+#include "ARMCM4.h" // Cabecera del CMSIS para el microcontrolador FM4
 
 // Permitir el uso de tipos de punto flotante en este fichero
 #undef float
@@ -94,7 +96,7 @@ float g_time = 0.0;
  *
  * @return No retorna (bucle infinito tras breakpoint)
  */
-int main() {
+int main(void) {
   // ---------------------------------------------------------------------------
   // INICIALIZACIÓN
   // ---------------------------------------------------------------------------
@@ -202,7 +204,7 @@ int main() {
    * - g_time: Tiempo total transcurrido
    * - Variables internas de los módulos lab4 y lab5
    */
-  __asm volatile ("BKPT #0");
+  __BKPT(0); // Punto de parada para indicar que todo ha ido bien
 
   // Bucle infinito (nunca se alcanza en depuración)
   while(1);

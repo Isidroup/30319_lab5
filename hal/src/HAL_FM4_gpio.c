@@ -37,12 +37,12 @@ void GPIO_ChannelMode(const GpioChannel_t channel, const GpioDir_t mode)
 
     assert(channel < 256);
 
-    port = channel >> 4;
-    bitport = channel & 0xF;
+    port = (uint8_t)channel >> 4;
+    bitport = (uint8_t)channel & 0xF;
 
     volatile uint32_t *registro;
     registro = &FM4_GPIO->DDR0 + port;
-    *registro = (*registro & (~(1u << bitport))) | (mode << bitport);
+    *registro = (*registro & (~(1u << bitport))) | ((uint32_t)mode << bitport);
 
 }
 /*------------------------------------------------- GPIO_ChannelDigAna -----
@@ -64,44 +64,44 @@ void GPIO_ChannelDigAna(const GpioChannel_t channel, const GpioDigAna_t mode)
 
     assert((int32_t)channel < 256);
 
-    port = channel >> 4;
-    bitport = channel & 0xF;
+    port = (uint8_t)channel >> 4;
+    bitport = (uint8_t)channel & 0xF;
 
     if (port == 1)
-        FM4_GPIO->ADE = (FM4_GPIO->ADE & (~(1u << bitport))) | (mode << bitport);
+        FM4_GPIO->ADE = (FM4_GPIO->ADE & (~(1u << bitport))) | ((uint32_t)mode << bitport);
     else if (port == 2)
         switch (bitport)
         {
         case 2:
-            FM4_GPIO->ADE = (FM4_GPIO->ADE & (~(1u << 31))) | (mode << 31);
+            FM4_GPIO->ADE = (FM4_GPIO->ADE & (~(1u << 31))) | ((uint32_t)mode << 31);
             break;
         case 3:
-            FM4_GPIO->ADE = (FM4_GPIO->ADE & (~(1u << 30))) | (mode << 30);
+            FM4_GPIO->ADE = (FM4_GPIO->ADE & (~(1u << 30))) | ((uint32_t)mode << 30);
             break;
         case 4:
-            FM4_GPIO->ADE = (FM4_GPIO->ADE & (~(1u << 29))) | (mode << 29);
+            FM4_GPIO->ADE = (FM4_GPIO->ADE & (~(1u << 29))) | ((uint32_t)mode << 29);
             break;
         case 5:
-            FM4_GPIO->ADE = (FM4_GPIO->ADE & (~(1u << 28))) | (mode << 28);
+            FM4_GPIO->ADE = (FM4_GPIO->ADE & (~(1u << 28))) | ((uint32_t)mode << 28);
             break;
         case 7:
-            FM4_GPIO->ADE = (FM4_GPIO->ADE & (~(1u << 27))) | (mode << 27);
+            FM4_GPIO->ADE = (FM4_GPIO->ADE & (~(1u << 27))) | ((uint32_t)mode << 27);
             break;
         case 8:
-            FM4_GPIO->ADE = (FM4_GPIO->ADE & (~(1u << 26))) | (mode << 26);
+            FM4_GPIO->ADE = (FM4_GPIO->ADE & (~(1u << 26))) | ((uint32_t)mode << 26);
             break;
         case 9:
-            FM4_GPIO->ADE = (FM4_GPIO->ADE & (~(1u << 25))) | (mode << 25);
+            FM4_GPIO->ADE = (FM4_GPIO->ADE & (~(1u << 25))) | ((uint32_t)mode << 25);
             break;
         case 0xA:
-            FM4_GPIO->ADE = (FM4_GPIO->ADE & (~(1u << 24))) | (mode << 24);
+            FM4_GPIO->ADE = (FM4_GPIO->ADE & (~(1u << 24))) | ((uint32_t)mode << 24);
             break;
         default:
             assert(0);
         }
     else if (port == 0xB)
         {
-            FM4_GPIO->ADE = (FM4_GPIO->ADE & (~(1u << (bitport+16)))) | (mode << (bitport+16));
+            FM4_GPIO->ADE = (FM4_GPIO->ADE & (~(1u << (bitport+16)))) | ((uint32_t)mode << (bitport+16));
         }
     else assert(0);
 }
@@ -128,12 +128,12 @@ GpioPinState_t GPIO_ChannelRead(const GpioChannel_t channel)
 
     assert(channel < 256);
 
-    port = channel >> 4;
-    bitport = channel & 0xF;
+    port = (uint8_t)channel >> 4;
+    bitport = (uint8_t)channel & 0xF;
 
     volatile uint32_t *registro;
     registro = &FM4_GPIO->PDIR0 + port;
-    dataport = *registro;
+    dataport = (uint16_t)*registro;
     pin = (dataport & (1u << bitport)) ? GPIO_HIGH : GPIO_LOW;
     return pin;
 }
@@ -159,11 +159,11 @@ void GPIO_ChannelWrite(const GpioChannel_t channel, const GpioPinState_t pin)
 
     assert(channel < 256);
 
-    port = channel >> 4;
-    bitport = channel & 0xF;
+    port = (uint8_t)channel >> 4;
+    bitport = (uint8_t)channel & 0xF;
     volatile uint32_t *registro;
     registro = &FM4_GPIO->PDOR0 + port;
-    *registro = (*registro & (~(1u << bitport))) | (pin << bitport);
+    *registro = (*registro & (~(1u << bitport))) | ((uint32_t)pin << bitport);
 }
 
 /*------------------------------------------------- GPIO_ChannelToggle -----
@@ -186,8 +186,8 @@ void GPIO_ChannelToggle(const GpioChannel_t channel)
 
     assert(channel < 256);
 
-    port = channel >> 4;
-    bitport = channel & 0xF;
+    port = (uint8_t)channel >> 4;
+    bitport = (uint8_t)channel & 0xF;
 
     volatile uint32_t *registro;
     registro = &FM4_GPIO->PDOR0 + port;

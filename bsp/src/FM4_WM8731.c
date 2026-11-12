@@ -73,8 +73,8 @@ void FM4_WM8731_init(uint8_t fs, uint8_t select_input, uint8_t hp_out_gain, uint
 void FM4_WM8731_wr(int16_t datoL, int16_t datoR)
 {
     WM8731_data_t dato;
-    dato.uint16bit[LEFT]=datoL;
-    dato.uint16bit[RIGHT]=datoR;
+    dato.uint16bit[LEFT]=(uint16_t)datoL;
+    dato.uint16bit[RIGHT]=(uint16_t)datoR;
     I2S_tx(dato.uint32bit);
 }
 
@@ -87,6 +87,6 @@ void FM4_WM8731_rd(int16_t *datoL, int16_t *datoR)
 {
     WM8731_data_t dato;
     dato.uint32bit=I2S_rx();
-    *datoL=dato.uint16bit[LEFT];
-    *datoR=dato.uint16bit[RIGHT];
+    *datoL=(int16_t)dato.uint16bit[LEFT];
+    *datoR=(int16_t)dato.uint16bit[RIGHT];
 }

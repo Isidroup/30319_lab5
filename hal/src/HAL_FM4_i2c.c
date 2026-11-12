@@ -76,7 +76,7 @@ void I2C_write(uint8_t device_address, uint8_t register_address, uint8_t cmd)
   FM4_MFS2->ISBA = 0x00u;                        // disable slave address detection
   FM4_MFS2->ISMK = 0x00;                         // clear slave mask
   bFM4_MFS2_I2C_ISMK_EN = 0x01;
-  FM4_MFS2->TDR = (device_address << 1)|0x00;    // load codec device address into transmit data register
+  FM4_MFS2->TDR = (uint16_t)(device_address << 1); // load codec device address into transmit data register
   FM4_MFS2->IBCR = 0x80u;                        // select master mode
   while(!(bFM4_MFS2_I2C_IBCR_INT)) {}            // wait for interrupt flag, i.e. transmission complete
   FM4_MFS2->TDR = (register_address);            // load codec register address into transmit data register

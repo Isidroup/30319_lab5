@@ -17,14 +17,15 @@
  * @version 1.0
  */
 
-#ifndef EJERCICIOS_H
-#define EJERCICIOS_H
+#ifndef EJERCICIOS_L5_H
+#define EJERCICIOS_L5_H
 
 #include <stdint.h>
 
 // Evitar el uso de tipos de punto flotante
-#define float void
-#define double void
+#pragma clang diagnostic error "-Wdouble-promotion"
+#pragma clang diagnostic error "-Wfloat-conversion"
+#pragma clang diagnostic error "-Wimplicit-float-conversion"
 
 // =============================================================================
 // FUNCIONES DE PROCESADO DIGITAL DE SEÑAL
@@ -99,4 +100,4 @@ uint8_t lab5(int16_t FSK_in);
  */
 const char* uart_decode(uint8_t bit_value);
 
-#endif // EJERCICIOS_H
+#endif // EJERCICIOS_L5_H

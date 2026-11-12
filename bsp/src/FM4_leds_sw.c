@@ -27,7 +27,7 @@
  *
  *-------------------------------------------------------------------*/
 
- void LedsSwInit()
+ void LedsSwInit(void)
  {
     // FM4 - Pioneeer
     // P18 LED RGB(Azul)
@@ -210,8 +210,8 @@ uint8_t Sw2Read(void)
 
 #define TOP (0x03FF)
 
-void breath_led(const Leds_t led) 
-	{
+void breath_led(const Leds_t led)
+    {
     static uint32_t time_counter = 0;
     static uint16_t pwm_counter = 0;
 
@@ -238,6 +238,3 @@ void breath_rgb(const rgb_color_t color) {
 
     pwm_counter = (pwm_counter + 1) & TOP;
 }
-
-
-

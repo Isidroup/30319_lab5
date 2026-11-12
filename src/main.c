@@ -1,6 +1,6 @@
-/**
+﻿/**
  * @file main.c
- * @date :2025/10/28 10:57:59
+ * @date :2026/11/12 14:25:41
  * @brief Programa principal del laboratorio 5 - Modulación y Demodulación FSK
  *
  * Este programa implementa un sistema completo de comunicación FSK que integra:
@@ -104,17 +104,39 @@ int32_t main(void) {
   GPIO_ChannelWrite(P7D, GPIO_LOW);
   GPIO_ChannelWrite(PF1, GPIO_LOW);
 
-  /**
-   * Inicialización del buffer circular de transmisión
-   * - Valor inicial: 0 (silencio)
-   */
-  circ_buf_init(&g_tx_buffer, 0, 2);
 
-  // Habilita interrupción I2S para gestión de transferencias de audio
-  NVIC_EnableIRQ(PRGCRC_I2S_IRQn);
+ /* TODO: Inicialización de la aplicación:
+  *
+  *     ┌────────────────────────────────────┐
+  *     │   Inicializar g_rx_buffer vacío    │
+  *     └──────────────────┬─────────────────┘
+  *                        ▼
+  *     ┌────────────────────────────────────┐
+  *     │   Inicializar g_tx_buffer vacío    │
+  *     └──────────────────┬─────────────────┘
+  *                        ▼
+  *     ┌────────────────────────────────────┐
+  *     │ Generar e insertar 127 muestras    │
+  *     │  valor de reposo en  g_tx_buffer   │
+  *     └──────────────────┬─────────────────┘
+  *                        ▼
+  *     ┌────────────────────────────────────┐
+  *     │    Iniciar I2S y precargar su      │
+  *     │         FIFO tx con silencio       │
+  *     └──────────────────┬─────────────────┘
+  *                        ▼
+  *     ┌────────────────────────────────────┐
+  *     │         Habilitar IRQ I2S          │
+  *     └──────────────────┬─────────────────┘
+  *                        ▼
+  */
+
+
+
+
 
   // ---------------------------------------------------------------------------
-  // EJECUTIVO CÍCLICO (ROUND-ROBIN)
+  // EJECUTIVO CÍCLICO (ROUND-ROBIN)  superlloop
   // ---------------------------------------------------------------------------
 
   /**
@@ -190,21 +212,51 @@ int32_t main(void) {
      * Genera una muestra de audio FSK y la inserta en el buffer de transmisión
      * El procesamiento real se realiza solo si hay espacio en el buffer
      *
+     * @note: => Utiliza un buffer circular para compartir información con la ISR
      */
-    __disable_irq(); // Proteger acceso a variable compartida
-    uint8_t error_push = circ_buf_push(&g_tx_buffer, sample);
-    __enable_irq();
 
-    if (error_push == 0) {
-      // Buffer tiene espacio disponible, generar nueva muestra
+    /*
+      *      ╱───────────────╲
+      *     ╱ ¿Hay espacio en ╲ no
+      *    ⟨    g_tx_buffer?   ⟩─────────┐
+      *     ╲                 ╱          │
+      *      ╲──────────────╱            │
+      *              │ sí                │
+      *              ▼                   │
+      *      ┌───────────────┐           │
+      *      │ Calcular sig. │           │
+      *      │ muestra con   │           │
+      *      │ lab41()       │           │
+      *      └───────┬───────┘           │
+      *              │                   │
+      *              ▼                   │
+      *      ┌───────────────┐           │
+      *      │ Insertar      │           │
+      *      │ muestra en    │           │
+      *      │ g_tx_buffer   │           │
+      *      └───────┬───────┘           │
+      *              │                   │
+      *              ▼                   │
+      *              ├───────────────────┘
+      *
+      */
 
-      /**
-       * Opciones de modulación FSK disponibles:
-       *
-       * lab41(): Genera señal FSK con datos predefinidos
-       * - Útil para pruebas básicas de modulación
-       */
-      sample = lab41(pulsacion);
+      if (circ_buf_is_full(&g_tx_buffer) == 0) {
+
+        sample = lab41(pulsacion);
+
+        uint32_t primask = __get_PRIMASK();
+        __disable_irq(); // Proteger acceso a variable compartida
+
+        int8_t error_push = circ_buf_push(&g_tx_buffer, sample);
+
+        __set_PRIMASK(primask); // Restaurar estado de interrupciones
+
+        // Con un productor y un consumidor, la inserción debe tener éxito tras
+        // comprobar espacio. Conserva este punto para depuración si falla.
+        if (error_push != 0) {
+          __BKPT(1);
+        }
 
       /**
        * lab42(): Genera señal FSK transmitiendo un buffer de texto
@@ -215,46 +267,47 @@ int32_t main(void) {
       // sample = lab42(pulsacion, frase);
     }
 
-    // Tarea 5: Recepción y demodulación de señales FSK
-    /**
-     * Lee datos del buffer de recepción (si hay disponibles)
-     * y los procesa mediante el demodulador FSK
-     *
-     * El bit demodulado se visualiza en el pin P7D para depuración
-     */
-    int16_t rxdata;
-    __disable_irq(); // Proteger acceso a variable compartida
-      //TODO: Implementar extracción de dato del buffer circularº
-    uint8_t error = ...
-    __enable_irq();
+      // Tarea 5: Recepción y demodulación de señales FSK
+      /** @note: => Utiliza un buffer circular para compartir información con la ISR
+      */
 
-    if (error == 0) {
-      // Hay datos en el buffer de recepción, procesar
+      /*
+      *       ╱───────────────╲
+      *      ╱   ¿muestras     ╲ no
+      * ┌──▶⟨procesadas<limite? ⟩───▶─────┐
+      * │    ╲                 ╱          │
+      * │     ╲───────────────╱           │
+      * │             │ sí                │
+      * │             ▼                   │
+      * │     ┌───────────────┐           │
+      * │     │ Leer mustra   │           │
+      * │     │ de g_rx_buffer│           │
+      * │     └───────┬───────┘           │
+      * │             │                   │
+      * │             ▼                   │
+      * │     ╱───────────────╲           │
+      * │    ╱   ¿Lectura      ╲ no       │
+      * │   ⟨    con éxito?     ⟩───▶─────│
+      * │    ╲                 ╱          │
+      * │     ╲───────────────╱           │
+      * │             │ sí                │
+      * │             ▼                   │
+      * │  ┌──────────────────────┐       │
+      * │  │ lab5(fsk_in)         │       │
+      * │  │ Demodular muestra    │       │       │
+      * │  └──────────────────────┘       │
+      * │             │                   │
+      * │             ▼                   │
+      * │  ┌──────────────────────┐       │
+      * │  │ Mostrar bit en P7D   │       │
+      * │  │ samples_processed++  │       │
+      * │  └──────────────────────┘       │
+      * │             │                   │
+      * └─────────────┘                   │
+      *               ┌───────────────────┘
+      *               ▼
+      */
 
-      /**
-       *  TODO:
-       * Demodula la muestra FSK y recupera el bit digital
-       * El resultado (0 o 1) se refleja en el pin GPIO P7D
-       * para visualización con osciloscopio o analizador lógico
-       */
-
-
-
-
-    }
-
-    // -------------------------------------------------------------------------
-    // TAREAS CONTINUAS
-    // -------------------------------------------------------------------------
-
-    /**
-     * Tarea 6: Efecto breathing en LED Ethernet
-     * Se ejecuta continuamente para proporcionar indicación visual
-     * de que el sistema está en funcionamiento
-     */
-    if (1) {
-      breath_led(LED_ETH);
-    }
   }
 
   return 0; // Never reached
