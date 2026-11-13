@@ -1,6 +1,6 @@
 /**
  * @file test_filtro.c
- * @date :2026/11/12 11:17:02
+ * @date :2026/11/13 07:44:03
  * @brief Programa de test para verificar el comportamiento del filtro IIR
  *
  * Este fichero contiene una serie de tests diseñados para caracterizar

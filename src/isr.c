@@ -26,6 +26,11 @@
 #include "circ_buf.h"
 #include "ejercicios.h"
 
+#include <stdint.h>
+#include <stddef.h>
+
+uint32_t g_tx_software_underflow = 0;  // Contador de infraflujo de transmisión
+
 // =============================================================================
 // RUTINAS DE SERVICIO DE INTERRUPCIÓN
 // =============================================================================
@@ -66,46 +71,10 @@ void PRGCRC_I2S_IRQHandler(void)
   // GESTIÓN DE TRANSMISIÓN I2S (TX)
   // ---------------------------------------------------------------------------
 
-     // La condición de interrupción es «la FIFO tiene hueco». Se rellena hasta
-    // eliminarla para evitar que la ISR se reactive inmediatamente.
+  // La condición de interrupción es «la FIFO tiene hueco». Se rellena hasta
+  //  eliminarla para evitar que la ISR se reactive inmediatamente.
 
-    /*
-     *                            ▼
-     *                  ╱───────────────────╲
-     *                 ╱  ¿Hay espacio en    ╲ no
-     *    ┌──────────►⟨       FIFO tx?        ⟩─────────┐
-     *    │            ╲                     ╱          │
-     *    │             ╲───────────────────╱           │
-     *    │                       │ sí                  │
-     *    │                       ▼                     │
-     *    │             ╱───────────────────╲           │
-     *    │            ╱  ¿g_tx_buffer tiene ╲          │
-     *    │           ⟨       una muestra?    ⟩         │
-     *    │            ╲                     ╱          │
-     *    │             ╲───────────────────╱           │
-     *    │                ╱             ╲              │
-     *    │            sí ╱               ╲ no          │
-     *    │              ▼                 ▼            │
-     *    │ ┌──────────────┐     ┌─────────────────┐    │
-     *    │ │ Extraer      │     │ Incrementar     │    │
-     *    │ │ muestra y    │     │ contador de     │    │
-     *    │ │ escribirla   │     │ infraflujo      │    │
-     *    │ │ en FIFO I2S  │     │ software y      │    │
-     *    │ └──────┬───────┘     │ escribir        │    │
-     *    │        │             │ silencio        │    │
-     *    │        │             └────────┬────────┘    │
-     *    │        │                      │             │
-     *    │        └──────────┬───────────┘             │
-     *    │                   │ (Repetir while)         │
-     *    └───────────────────┴                         │
-     *                                                  │
-     *                                                  ▼
-     *                                               ╭──────╮
-     *                                               │ Fin  │
-     *                                               ╰──────╯
-     */
-
-     while (I2S_isTxBufferFree()) {
+  while (I2S_isTxBufferFree()) {
       int16_t txdata;
 
       if (circ_buf_pop(&g_tx_buffer, &txdata) == 0) {
@@ -118,51 +87,53 @@ void PRGCRC_I2S_IRQHandler(void)
         FM4_WM8731_wr(0, 0);
       }
     }
+
+
+// ---------------------------------------------------------------------------
+// GESTIÓN DE RECEPCIÓN I2S (RX)
+// ---------------------------------------------------------------------------
+/*
+ * Condición: Buffer de recepción I2S tiene datos nuevos disponibles
+ * Acción: Leer muestra del códec e insertar en buffer circular
+ *
+ *
+ *                         ▼
+ *               ╱───────────────────╲
+ *              ╱  ¿Hay muestras en   ╲ no
+ * ┌──────────►⟨       FIFO rx?        ⟩───────────────────────────────────┐
+ * │            ╲                     ╱                                    │
+ * │             ╲───────────────────╱                                     │
+ * │                       │ sí                                            │
+ * │                       ▼                                               │
+ * │                ┌──────────────┐                                       │
+ * │                │ leer muestra │                                       │
+ * │                └──────┬───────┘                                       │
+ * │                       ▼                                               │
+ * │        ┌───────────────────────────────┐                              │
+ * │        │ guarda muestra en g_rx_buffer │                              │
+ * │        └───────────────────────────────┘                              │
+ * │                       │                                               │
+ * │                       ▼                                               │
+ * │                ╱────────────────╲  no  ┌────────────────────────────┐ │
+ * │               ╱   ¿Apilado con   \─────│ Buffer software lleno      │─┼
+ * │               ╲       exito?     ╱     │ Descartar muestra          │ │
+ * │                ╲────────────────╱      │ g_rx_software_overflow++   │ │
+ * │                          │ sí          └────────────────────────────┘ │
+ * │                          │ (Repetir while)                            │
+ * └──────────────────────────┴                                            │
+ *                                                                         │
+ *                                                                         ▼
+ *                                                                     ╭──────╮
+ *                                                                     │ Fin  │
+ *                                                                     ╰──────╯
+ */
+  while (I2S_isRxBufferNotEmpty())
+  {
+
+    // TODO: Implementar la recepción de muestras del códec WM8731 según diagrama.
+
   }
 
-
-  // ---------------------------------------------------------------------------
-  // GESTIÓN DE RECEPCIÓN I2S (RX)
-  // ---------------------------------------------------------------------------
-
-  /**
-   * Condición: Buffer de recepción I2S tiene datos nuevos disponibles
-   * Acción: Leer muestra del códec e insertar en buffer circular
-   */
-  if (I2S_isRxBufferNotEmpty()) {
-
-    /*
-     *                            ▼
-     *                  ╱───────────────────╲
-     *                 ╱  ¿Hay muestras en   ╲ no
-     *    ┌──────────►⟨       FIFO rx?        ⟩───────────────────────────────────┐
-     *    │            ╲                     ╱                                    │
-     *    │             ╲───────────────────╱                                     │
-     *    │                       │ sí                                            │
-     *    │                       ▼                                               │
-     *    │                ┌──────────────┐                                       │
-     *    │                │ leer muestra │                                       │
-     *    │                └──────┬───────┘                                       │
-     *    │                       ▼                                               │
-     *    │        ┌───────────────────────────────┐                              │
-     *    │        │ guarda muestra en g_rx_buffer │                              │
-     *    │        └───────────────────────────────┘                              │
-     *    │                       │                                               │
-     *    │                       ▼                                               │
-     *    │                ╱────────────────╲  no  ┌────────────────────────────┐ │
-     *    │               ╱   ¿Apilado con   \─────│ Buffer software lleno      │─┼
-     *    │               ╲       exito?     ╱     │ Descartar muestra          │ │
-     *    │                ╲────────────────╱      │ g_rx_software_overflow++   │ │
-     *    │                          │ sí          └────────────────────────────┘ │
-     *    │                          │ (Repetir while)                            │
-     *    └──────────────────────────┴                                            │
-     *                                                                            │
-     *                                                                            ▼
-     *                                                                         ╭──────╮
-     *                                                                         │ Fin  │
-     *                                                                         ╰──────╯
-     */
-  }
 }
 
 // EOF

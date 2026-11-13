@@ -1,6 +1,6 @@
 /**
  * @file ejercicios.c
- * @date :2025/11/09 18:40:03
+ * @date :2026/11/13 07:35:45
  * @brief Demodulación FSK y utilidades de decodificación UART en software.
  *
  * @details
@@ -42,9 +42,9 @@
 int16_t iir_filtro_df2t (int16_t entrada)
 {
      int16_t salida;
-  
+
     //TODO: Implementar el filtro IIR de 2º orden en formato Direct Form II Transpose (DF2T)
-  
+
     return salida;
 }
 
@@ -104,38 +104,3 @@ uint8_t lab5(int16_t FSK_in)
 
     return FSK_demod;
  }
-
-
-/**
- * @brief Decodificación UART 8N1 a partir de bits demodulados.
- *
- * @param bit_value Bit de entrada (0/1) a la frecuencia de muestreo definida.
- * @return Puntero a buffer estático con el string acumulado o NULL si incompleto.
- *
- * @details
- * - Protocolo: 1 start (0), 8 datos LSB-first, 1 stop (1) → 8N1.
- * - Tiempo por bit: SAMPLES_PER_BIT (muestras/bit).
- * - Re-sincroniza al centro del bit ante cualquier flanco durante DATA/STOP.
- * - Al completar un byte válido, lo añade a un buffer estático terminado en '\0'.
- *
- * @note El puntero retornado es a memoria estática; no es reentrante.
- */
-const char* uart_decode(uint8_t bit_value) {
-
-    const char* result = NULL;
-
-    //TODO: Implementar el decodificador UART 8N1 basado en muestreo a tasa fija
-
-    return result;
-}
-
-/**
- * @brief Reinicia el decodificador UART y limpia el buffer de salida.
- *
- * @note Esta implementación es un esqueleto; adaptar para reiniciar estado estático.
- */
-void uart_decoder_reset(void) {
-    // Esta función debe declararse con las variables estáticas
-    // Para acceder a ellas, podemos usar una variable global alternativa
-    // o simplemente no implementarla si no es necesaria
-}

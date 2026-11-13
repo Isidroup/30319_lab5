@@ -7,6 +7,7 @@
  * de audio WM8731 mediante I2C (configuración) e I2S (datos de audio).
  */
 
+#include <stddef.h>
 #include <stdint.h>
 #include "mcu.h"
 #include "FM4_WM8731.h"
@@ -87,6 +88,12 @@ void FM4_WM8731_rd(int16_t *datoL, int16_t *datoR)
 {
     WM8731_data_t dato;
     dato.uint32bit=I2S_rx();
-    *datoL=(int16_t)dato.uint16bit[LEFT];
-    *datoR=(int16_t)dato.uint16bit[RIGHT];
+    if (datoL != NULL)
+    {
+        *datoL=(int16_t)dato.uint16bit[LEFT];
+    }
+    if (datoR != NULL)
+    {
+        *datoR=(int16_t)dato.uint16bit[RIGHT];
+    }
 }

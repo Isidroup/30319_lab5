@@ -73,31 +73,5 @@ int16_t iir_filtro_df2t(int16_t entrada);
  */
 uint8_t lab5(int16_t FSK_in);
 
-/**
- * @brief Decodifica un bit FSK según el protocolo UART
- *
- * Esta función implementa un decodificador UART que reconstruye caracteres
- * a partir de la secuencia de bits demodulados. Procesa el protocolo UART:
- * 1. Detecta el bit de start (transición de 1 a 0)
- * 2. Captura los 8 bits de datos (LSB primero)
- * 3. Verifica el bit de stop
- * 4. Devuelve el carácter recibido
- *
- * Formato UART: 8N1 (8 bits de datos, sin paridad, 1 bit de stop)
- *
- * @param bit_value Bit demodulado actual (0 o 1)
- * @return Puntero a string con el carácter recibido, o NULL si no hay carácter completo
- *
- * @note La función mantiene una máquina de estados interna
- * @note Debe llamarse una vez por cada bit demodulado
- * @note El string devuelto es estático y se sobrescribe en cada llamada
- * @note Velocidad de transmisión típica: 1200 baud
- *
- * @retval NULL No se ha completado la recepción de un carácter
- * @retval char* Puntero a string con el carácter recibido (formato ASCII)
- *
- * @warning No realiza verificación de paridad ni detección de errores
- */
-const char* uart_decode(uint8_t bit_value);
 
 #endif // EJERCICIOS_L5_H

@@ -1,6 +1,6 @@
 /**
  * @file test_lab5.c
- * @date :2026/11/12 11:17:12
+ * @date :2026/11/13 07:49:20
  *
  * @brief Programa de test integrado para los laboratorios 4 y 5
  *
@@ -74,7 +74,7 @@ const char* g_received_string = NULL;
 /**
  * @brief Periodo de muestreo en segundos (1/Fs)
  */
-const float g_period = 1.0/48000;
+const float g_period = 1.0f/48000;
 
 /**
  * @brief Tiempo transcurrido desde el inicio de la simulación (en segundos)
@@ -105,7 +105,7 @@ int main(void) {
    * Cadena de prueba para lab42 (transmisión de buffer de texto)
    * @note Actualmente no se usa, pero está disponible para testing alternativo
    */
-  char frase[] = "1";
+  // char frase[] = "1";
 
   // Estado inicial: sin pulsación
   g_pls = 0;
@@ -178,19 +178,6 @@ int main(void) {
      */
     g_fsk_demod = lab5(g_sample);
 
-    // -------------------------------------------------------------------------
-    // DECODIFICACIÓN UART
-    // -------------------------------------------------------------------------
-
-    /**
-     * Decodifica los bits FSK según protocolo UART
-     * Si se completa la recepción de un carácter, devuelve un puntero al string
-     * de lo contrario, devuelve NULL
-     */
-    temp = uart_decode(g_fsk_demod);
-    if (temp != NULL) {
-      g_received_string = temp;  // Almacenar el carácter recibido
-    }
   }
 
   // ---------------------------------------------------------------------------

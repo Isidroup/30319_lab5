@@ -1,6 +1,6 @@
 ﻿/**
  * @file main.c
- * @date :2026/11/12 14:25:41
+ * @date :2026/11/13 08:57:38
  * @brief Programa principal del laboratorio 5 - Modulación y Demodulación FSK
  *
  * Este programa implementa un sistema completo de comunicación FSK que integra:
@@ -130,7 +130,24 @@ int32_t main(void) {
   *     └──────────────────┬─────────────────┘
   *                        ▼
   */
+  // Inicializar buffer recepción vacío
+  circ_buf_init(&g_rx_buffer, 0U, 0U);
 
+  // Inicializar buffer transmisión vacío
+  circ_buf_init(&g_tx_buffer, 0U, 0U);
+
+  // Llenar buffer con silencio
+  while (circ_buf_is_full(&g_tx_buffer) == 0) {
+    int16_t sample = 0;
+    (void)circ_buf_push(&g_tx_buffer, sample);
+  }
+
+  // Inicializar I2S
+  I2S_start();
+
+  // Habilitar interrupción de I2S
+
+  NVIC_EnableIRQ(PRGCRC_I2S_IRQn);
 
 
 
@@ -215,33 +232,7 @@ int32_t main(void) {
      * @note: => Utiliza un buffer circular para compartir información con la ISR
      */
 
-    /*
-      *      ╱───────────────╲
-      *     ╱ ¿Hay espacio en ╲ no
-      *    ⟨    g_tx_buffer?   ⟩─────────┐
-      *     ╲                 ╱          │
-      *      ╲──────────────╱            │
-      *              │ sí                │
-      *              ▼                   │
-      *      ┌───────────────┐           │
-      *      │ Calcular sig. │           │
-      *      │ muestra con   │           │
-      *      │ lab41()       │           │
-      *      └───────┬───────┘           │
-      *              │                   │
-      *              ▼                   │
-      *      ┌───────────────┐           │
-      *      │ Insertar      │           │
-      *      │ muestra en    │           │
-      *      │ g_tx_buffer   │           │
-      *      └───────┬───────┘           │
-      *              │                   │
-      *              ▼                   │
-      *              ├───────────────────┘
-      *
-      */
-
-      if (circ_buf_is_full(&g_tx_buffer) == 0) {
+     if (circ_buf_is_full(&g_tx_buffer) == 0) {
 
         sample = lab41(pulsacion);
 
@@ -258,55 +249,55 @@ int32_t main(void) {
           __BKPT(1);
         }
 
-      /**
-       * lab42(): Genera señal FSK transmitiendo un buffer de texto
-       * - Permite transmitir mensajes de texto completos
-       * - El texto se codifica en formato UART y modula en FSK
-       */
-      // static char frase[] = "SEMP 30319";
-      // sample = lab42(pulsacion, frase);
     }
 
-      // Tarea 5: Recepción y demodulación de señales FSK
-      /** @note: => Utiliza un buffer circular para compartir información con la ISR
+     /**  Tarea 5: Recepción y demodulación de señales FSK
+      * Procesa las muestras recibidas del códec WM8731 mediante la ISR
+      * y recupera los bits digitales (0 o 1) de la señal FSK modulada.
+      * El bit demodulado se muestra en el pin P7D para depuración.
+      *
+      * @note: => La ISR se encarga de leer las muestras y almacenarlas en g_rx_buffer
+      * @note: => Esta tarea solo procesa los datos ya disponibles en g_rx_buffer
+      * @note: Es necesario establecer el número límite de muestras a procesar en
+      *          una iteración.
+      *
+      *             ╱───────────────╲
+      *            ╱   ¿muestras     ╲ no
+      *       ┌──▶⟨procesadas<limite? ⟩───▶─────┐
+      *       │    ╲                 ╱          │
+      *       │     ╲───────────────╱           │
+      *       │             │ sí                │
+      *       │             ▼                   │
+      *       │     ┌───────────────┐           │
+      *       │     │ Leer mustra   │           │
+      *       │     │ de g_rx_buffer│           │
+      *       │     └───────┬───────┘           │
+      *       │             │                   │
+      *       │             ▼                   │
+      *       │     ╱───────────────╲           │
+      *       │    ╱   ¿Lectura      ╲ no       │
+      *       │   ⟨    con éxito?     ⟩───▶─────│
+      *       │    ╲                 ╱          │
+      *       │     ╲───────────────╱           │
+      *       │             │ sí                │
+      *       │             ▼                   │
+      *       │  ┌──────────────────────┐       │
+      *       │  │ lab5(fsk_in)         │       │
+      *       │  │ Demodular muestra    │       │
+      *       │  └──────────────────────┘       │
+      *       │             │                   │
+      *       │             ▼                   │
+      *       │  ┌──────────────────────┐       │
+      *       │  │ Mostrar bit en P7D   │       │
+      *       │  │ samples_processed++  │       │
+      *       │  └──────────────────────┘       │
+      *       │             │                   │
+      *       └─────────────┘                   │
+      *                     ┌───────────────────┘
+      *                     ▼
       */
 
-      /*
-      *       ╱───────────────╲
-      *      ╱   ¿muestras     ╲ no
-      * ┌──▶⟨procesadas<limite? ⟩───▶─────┐
-      * │    ╲                 ╱          │
-      * │     ╲───────────────╱           │
-      * │             │ sí                │
-      * │             ▼                   │
-      * │     ┌───────────────┐           │
-      * │     │ Leer mustra   │           │
-      * │     │ de g_rx_buffer│           │
-      * │     └───────┬───────┘           │
-      * │             │                   │
-      * │             ▼                   │
-      * │     ╱───────────────╲           │
-      * │    ╱   ¿Lectura      ╲ no       │
-      * │   ⟨    con éxito?     ⟩───▶─────│
-      * │    ╲                 ╱          │
-      * │     ╲───────────────╱           │
-      * │             │ sí                │
-      * │             ▼                   │
-      * │  ┌──────────────────────┐       │
-      * │  │ lab5(fsk_in)         │       │
-      * │  │ Demodular muestra    │       │       │
-      * │  └──────────────────────┘       │
-      * │             │                   │
-      * │             ▼                   │
-      * │  ┌──────────────────────┐       │
-      * │  │ Mostrar bit en P7D   │       │
-      * │  │ samples_processed++  │       │
-      * │  └──────────────────────┘       │
-      * │             │                   │
-      * └─────────────┘                   │
-      *               ┌───────────────────┘
-      *               ▼
-      */
+
 
   }
 
