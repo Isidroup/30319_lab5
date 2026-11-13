@@ -32,7 +32,7 @@
 // =============================================================================
 
 /**
- * @brief Filtro elíptico IIR de 2º orden (DF2T) en Q15.
+ * @brief Filtro elíptico IIR de 2º orden (DF2T).
  *
  * @param entrada Señal de entrada en Q15 (<16,15>).
  * @return Señal filtrada en Q15 (<16,15>).
@@ -40,7 +40,7 @@
  * @details
  * - Estructura: Forma directa II transpuesta.
  * - Coeficientes escalados para operar en enteros (comentados en el código).
- * - Estados internos en Q31, con desplazamientos para mantener rango.
+ * - Estados internos en 32 bits, con desplazamientos para mantener rango.
  *
  * Diseño (Matlab):
  * @code

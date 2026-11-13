@@ -1,6 +1,6 @@
 ﻿/**
  * @file main.c
- * @date :2026/11/13 08:57:38
+ * @date :2026/11/13 09:16:54
  * @brief Programa principal del laboratorio 5 - Modulación y Demodulación FSK
  *
  * Este programa implementa un sistema completo de comunicación FSK que integra:
@@ -88,9 +88,6 @@ int32_t main(void) {
                   WM8731_LINE_IN,            // Audio input port
                   WM8731_HP_OUT_GAIN_0_DB,   // Output headphone jack Gain (dB)
                   WM8731_LINE_IN_GAIN_0_DB); // Line-in input gain (dB)
-
-  // Puesta en marcha de I2S (inicia transferencia de audio)
-  I2S_start();
 
   /**
    * Configuración de pines GPIO para depuración

@@ -338,7 +338,7 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference -Wno-c11-extensions</MiscControls>
-              <Define>_LAB3_DEBUG_</Define>
+              <Define></Define>
               <Undefine></Undefine>
               <IncludePath>..\src;..\hal\include;..\bsp\include;..\shared\include</IncludePath>
             </VariousControls>
@@ -2090,7 +2090,7 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls>-fwrapv -Wall -Wextra  -Wpedantic  -Wuninitialized -Wshift-overflow -Wconversion -Wsign-conversion -Wnull-dereference -Wno-c11-extensions</MiscControls>
-              <Define>_LAB3_DEBUG_</Define>
+              <Define></Define>
               <Undefine></Undefine>
               <IncludePath>..\src;..\hal\include;..\bsp\include;..\shared\include</IncludePath>
             </VariousControls>

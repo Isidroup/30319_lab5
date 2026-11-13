@@ -1,6 +1,6 @@
 /**
  * @file test_filtro.c
- * @date :2026/11/13 07:44:03
+ * @date :2026/11/13 09:22:20
  * @brief Programa de test para verificar el comportamiento del filtro IIR
  *
  * Este fichero contiene una serie de tests diseñados para caracterizar
@@ -101,7 +101,7 @@ int main(void) {
   // Permite medir la atenuación del filtro a 3326 Hz
   dds_16_bits_t dds = {
       .phase_accumulator = 0,
-      .phase_increment = 4541}; // Incremento de fase para generar 3326 Hz a Fs=48 kHz
+      .phase_increment = 4532}; // Incremento de fase para generar 3319 Hz a Fs=48 kHz
   for (int n = 0; n < 1024; n++) {
     g_inputsample = dds_16_bits_get_next_sample(&dds); // Genera muestra de señal senoidal
     g_outputsample = iir_filtro_df2t(g_inputsample);
@@ -111,8 +111,6 @@ int main(void) {
 
   __BKPT(1); // Punto de interrupción para analizar respuesta a 3326 Hz
 }
-
-
 
 
 

@@ -1,12 +1,12 @@
 /**
  * @file test_lab5.c
- * @date :2026/11/13 07:49:20
+ * @date :2026/11/13 09:23:11
  *
  * @brief Programa de test integrado para los laboratorios 4 y 5
  *
  * Este fichero implementa un test completo del sistema de comunicación FSK que integra:
  * - Laboratorio 4: Generación de señales FSK mediante modulación por pulsaciones
- * - Laboratorio 5: Demodulación FSK y decodificación UART
+ * - Laboratorio 5: Demodulación FSK
  *
  * Descripción del test:
  * El test simula una secuencia de pulsaciones que generan señales FSK moduladas,
